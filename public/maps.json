@@ -1,0 +1,1514 @@
+[
+  {
+    "label": "Dimensions",
+    "grade": {
+      "label": "E",
+      "background": "lime-300",
+      "hex": "#d9ead3",
+      "text": "black",
+      "level": 0
+    },
+    "times": {
+      "alien": "00:39.525",
+      "player": "00:42.453",
+      "intermediate": "00:45.358",
+      "noob": "00:52.652"
+    },
+    "exchange": {
+      "link": "https://trackmania.exchange/maps/22525/mini-rpg-dimensions",
+      "id": "22525",
+      "author": "Qiraj",
+      "thumbnail": "https://trackmania.exchange/maps/screenshot_normal/22525"
+    }
+  },
+  {
+    "label": "Island Escape",
+    "grade": {
+      "label": "E",
+      "background": "lime-300",
+      "hex": "#d9ead3",
+      "text": "black",
+      "level": 0
+    },
+    "times": {
+      "alien": "00:57.832",
+      "player": "01:02.190",
+      "intermediate": "01:05.851",
+      "noob": "01:22.654"
+    },
+    "exchange": {
+      "link": "https://trackmania.exchange/maps/116473/island-escape",
+      "id": "116473",
+      "author": "Anonyme_Herotax",
+      "thumbnail": "https://trackmania.exchange/maps/screenshot_normal/116473"
+    }
+  },
+  {
+    "label": "Vestiges",
+    "grade": {
+      "label": "E",
+      "background": "lime-300",
+      "hex": "#d9ead3",
+      "text": "black",
+      "level": 0
+    },
+    "times": {
+      "alien": "01:19.874",
+      "player": "01:23.177",
+      "intermediate": "01:29.654",
+      "noob": "01:51.007"
+    },
+    "exchange": {
+      "link": "https://trackmania.exchange/maps/195683/mini-rpg-vestiges",
+      "id": "195683",
+      "author": "Lepaing",
+      "thumbnail": "https://trackmania.exchange/maps/screenshot_normal/195683"
+    }
+  },
+  {
+    "label": "Inside",
+    "grade": {
+      "label": "E",
+      "background": "lime-300",
+      "hex": "#d9ead3",
+      "text": "black",
+      "level": 0
+    },
+    "times": {
+      "alien": "01:49.652",
+      "player": "01:56.651",
+      "intermediate": "02:05.156",
+      "noob": "02:45.561"
+    },
+    "exchange": {
+      "link": "https://trackmania.exchange/tracks/view/205627/rpg-inside"
+    }
+  },
+  {
+    "label": "Universe",
+    "grade": {
+      "label": "E",
+      "background": "lime-300",
+      "hex": "#d9ead3",
+      "text": "black",
+      "level": 0
+    },
+    "times": {
+      "alien": "02:01.789",
+      "player": "02:09.574",
+      "intermediate": "02:22.574",
+      "noob": "02:55.254"
+    },
+    "exchange": {
+      "link": "https://trackmania.exchange/maps/21695/rpg-universe",
+      "id": "21695",
+      "author": "ziyx",
+      "thumbnail": "https://trackmania.exchange/maps/screenshot_normal/21695"
+    }
+  },
+  {
+    "label": "Kannicule",
+    "grade": {
+      "label": "E",
+      "background": "lime-300",
+      "hex": "#d9ead3",
+      "text": "black",
+      "level": 0
+    },
+    "times": {
+      "alien": "04:39.057",
+      "player": "04:51.483",
+      "intermediate": "05:15.354",
+      "noob": "06:25.365"
+    },
+    "exchange": {
+      "link": "https://trackmania.exchange/maps/195471/rpg-kannicule",
+      "id": "195471",
+      "author": "Kann",
+      "thumbnail": "https://trackmania.exchange/maps/screenshot_normal/195471"
+    }
+  },
+  {
+    "label": "Castle",
+    "grade": {
+      "label": "D",
+      "background": "lime-600",
+      "hex": "#93c47d",
+      "text": "black",
+      "level": 1
+    },
+    "times": {
+      "alien": "00:51.897",
+      "player": "01:04.555",
+      "intermediate": "01:15.897",
+      "noob": "01:38.555"
+    },
+    "exchange": {
+      "link": "https://trackmania.exchange/maps/114420/castle",
+      "id": "114420",
+      "author": "BimobTm",
+      "thumbnail": "https://trackmania.exchange/maps/screenshot_normal/114420"
+    }
+  },
+  {
+    "label": "Eon 42",
+    "grade": {
+      "label": "D",
+      "background": "lime-600",
+      "hex": "#93c47d",
+      "text": "black",
+      "level": 1
+    },
+    "times": {
+      "alien": "02:25.758",
+      "player": "02:32.452",
+      "intermediate": "02:52.452",
+      "noob": "03:37.442"
+    },
+    "exchange": {
+      "link": "https://trackmania.exchange/maps/63912/rpg-eon-42",
+      "id": "63912",
+      "author": "ziyx",
+      "thumbnail": "https://trackmania.exchange/maps/screenshot_normal/63912"
+    }
+  },
+  {
+    "label": "Juldun",
+    "grade": {
+      "label": "D",
+      "background": "lime-600",
+      "hex": "#93c47d",
+      "text": "black",
+      "level": 1
+    },
+    "times": {
+      "alien": "02:40.869",
+      "player": "02:53.496",
+      "intermediate": "03:25.852",
+      "noob": "04:56.325"
+    },
+    "exchange": {
+      "link": "https://trackmania.exchange/maps/63911/rpg-juldun",
+      "id": "63911",
+      "author": "ziyx",
+      "thumbnail": "https://trackmania.exchange/maps/screenshot_normal/63911"
+    }
+  },
+  {
+    "label": "Late To The Match",
+    "grade": {
+      "label": "D",
+      "background": "lime-600",
+      "hex": "#93c47d",
+      "text": "black",
+      "level": 1
+    },
+    "times": {
+      "alien": "03:15.880",
+      "player": "03:28.784",
+      "intermediate": "04:15.952",
+      "noob": "05:15.056"
+    },
+    "exchange": {
+      "link": "https://trackmania.exchange/maps/16609/rpg-late-to-the-match",
+      "id": "16609",
+      "author": "Yannex",
+      "thumbnail": "https://trackmania.exchange/maps/screenshot_normal/16609"
+    }
+  },
+  {
+    "label": "Horizon's Edge  Sector A",
+    "grade": {
+      "label": "D",
+      "background": "lime-600",
+      "hex": "#93c47d",
+      "text": "black",
+      "level": 1
+    },
+    "times": {
+      "alien": "04:22.844",
+      "player": "04:37.452",
+      "intermediate": "04:52.584",
+      "noob": "05:49.236"
+    },
+    "exchange": {
+      "link": "https://trackmania.exchange/maps/204909/horizons-edge-sector-a",
+      "id": "204909",
+      "author": "Qiraj",
+      "thumbnail": "https://trackmania.exchange/maps/screenshot_normal/204909"
+    }
+  },
+  {
+    "label": "Blanc",
+    "grade": {
+      "label": "D",
+      "background": "lime-600",
+      "hex": "#93c47d",
+      "text": "black",
+      "level": 1
+    },
+    "times": {
+      "alien": "04:29.688",
+      "player": "04:45.158",
+      "intermediate": "05:39.688",
+      "noob": "06:20.158"
+    },
+    "exchange": {
+      "link": "https://trackmania.exchange/maps/167623/rpg-blanc",
+      "id": "167623",
+      "author": "Naxanria",
+      "thumbnail": "https://trackmania.exchange/maps/screenshot_normal/167623"
+    }
+  },
+  {
+    "label": "Xaltrion 32C",
+    "grade": {
+      "label": "D",
+      "background": "lime-600",
+      "hex": "#93c47d",
+      "text": "black",
+      "level": 1
+    },
+    "times": {
+      "alien": "04:59.153",
+      "player": "05:11.555",
+      "intermediate": "05:41.152",
+      "noob": "06:57.254"
+    },
+    "exchange": {
+      "link": "https://trackmania.exchange/maps/203740/rpg-xaltrion-32c",
+      "id": "203740",
+      "author": "Kann",
+      "thumbnail": "https://trackmania.exchange/maps/screenshot_normal/203740"
+    }
+  },
+  {
+    "label": "Walk In The Maze",
+    "grade": {
+      "label": "C",
+      "background": "cyan-400",
+      "hex": "#c9daf8",
+      "text": "black",
+      "level": 2
+    },
+    "times": {
+      "alien": "01:02.298",
+      "player": "01:03.850",
+      "intermediate": "01:12.658",
+      "noob": "01:55.485"
+    },
+    "exchange": {
+      "link": "https://trackmania.exchange/maps/107335/walk-in-the-maze",
+      "id": "107335",
+      "author": "Anonyme_Herotax",
+      "thumbnail": "https://trackmania.exchange/maps/screenshot_normal/107335"
+    }
+  },
+  {
+    "label": "Chantier",
+    "grade": {
+      "label": "C",
+      "background": "cyan-400",
+      "hex": "#c9daf8",
+      "text": "black",
+      "level": 2
+    },
+    "times": {
+      "alien": "02:36.785",
+      "player": "02:46.523",
+      "intermediate": "03:15.654",
+      "noob": "04:28.542"
+    },
+    "exchange": {
+      "link": "https://trackmania.exchange/maps/19327/rpg-chantier",
+      "id": "19327",
+      "author": "Sympthome",
+      "thumbnail": "https://trackmania.exchange/maps/screenshot_normal/19327"
+    }
+  },
+  {
+    "label": "Ora 7",
+    "grade": {
+      "label": "C",
+      "background": "cyan-400",
+      "hex": "#c9daf8",
+      "text": "black",
+      "level": 2
+    },
+    "times": {
+      "alien": "02:44.675",
+      "player": "02:52.456",
+      "intermediate": "03:19.426",
+      "noob": "04:35.255"
+    },
+    "exchange": {
+      "link": "https://trackmania.exchange/maps/63913/rpg-ora-7",
+      "id": "63913",
+      "author": "ziyx",
+      "thumbnail": "https://trackmania.exchange/maps/screenshot_normal/63913"
+    }
+  },
+  {
+    "label": "Pharaonyx",
+    "grade": {
+      "label": "C",
+      "background": "cyan-400",
+      "hex": "#c9daf8",
+      "text": "black",
+      "level": 2
+    },
+    "times": {
+      "alien": "03:42.456",
+      "player": "03:58.555",
+      "intermediate": "04:25.125",
+      "noob": "06:48.125"
+    },
+    "exchange": {
+      "link": "https://trackmania.exchange/maps/204322/rpg-pharaonyx",
+      "id": "204322",
+      "author": "Onyx_be01",
+      "thumbnail": "https://trackmania.exchange/maps/screenshot_normal/204322"
+    }
+  },
+  {
+    "label": "Treasure Island",
+    "grade": {
+      "label": "C",
+      "background": "cyan-400",
+      "hex": "#c9daf8",
+      "text": "black",
+      "level": 2
+    },
+    "times": {
+      "alien": "03:47.254",
+      "player": "03:58.546",
+      "intermediate": "04:35.257",
+      "noob": "07:02.474"
+    },
+    "exchange": {
+      "link": "https://trackmania.exchange/maps/153644/rpg-treasure-island",
+      "id": "153644",
+      "author": "ziyx",
+      "thumbnail": "https://trackmania.exchange/maps/screenshot_normal/153644"
+    }
+  },
+  {
+    "label": "Elder Wake",
+    "grade": {
+      "label": "C",
+      "background": "cyan-400",
+      "hex": "#c9daf8",
+      "text": "black",
+      "level": 2
+    },
+    "times": {
+      "alien": "03:49.110",
+      "player": "04:01.782",
+      "intermediate": "05:25.254",
+      "noob": "07:10.514"
+    },
+    "exchange": {
+      "link": "https://trackmania.exchange/maps/209057/rpg-elder-wake",
+      "id": "209057",
+      "author": "Onyx_be01",
+      "thumbnail": "https://trackmania.exchange/maps/screenshot_normal/209057"
+    }
+  },
+  {
+    "label": "Titan Abyss",
+    "grade": {
+      "label": "C",
+      "background": "cyan-400",
+      "hex": "#c9daf8",
+      "text": "black",
+      "level": 2
+    },
+    "times": {
+      "alien": "05:09.850",
+      "player": "05:24.102",
+      "intermediate": "05:45.450",
+      "noob": "07:25.322"
+    },
+    "exchange": {
+      "link": "https://trackmania.exchange/maps/187211/titans-abyss",
+      "id": "187211",
+      "author": "Qiraj",
+      "thumbnail": "https://trackmania.exchange/maps/screenshot_normal/187211"
+    }
+  },
+  {
+    "label": "Fugus",
+    "grade": {
+      "label": "B",
+      "background": "blue-500",
+      "hex": "#6d9eeb",
+      "text": "black",
+      "level": 3
+    },
+    "times": {
+      "alien": "01:00.559",
+      "player": "01:03.974",
+      "intermediate": "01:08.979",
+      "noob": "01:45.748"
+    },
+    "exchange": {
+      "link": "https://trackmania.exchange/maps/195488/fugus",
+      "id": "195488",
+      "author": "Anonyme_Herotax",
+      "thumbnail": "https://trackmania.exchange/maps/screenshot_normal/195488"
+    }
+  },
+  {
+    "label": "Archaeologia",
+    "grade": {
+      "label": "B",
+      "background": "blue-500",
+      "hex": "#6d9eeb",
+      "text": "black",
+      "level": 3
+    },
+    "times": {
+      "alien": "01:58.945",
+      "player": "02:02.671",
+      "intermediate": "02:15.658",
+      "noob": "02:50.671"
+    },
+    "exchange": {
+      "link": "https://trackmania.exchange/maps/162359/mrotw-archaeologia",
+      "id": "162359",
+      "author": "arckano61",
+      "thumbnail": "https://trackmania.exchange/maps/screenshot_normal/162359"
+    }
+  },
+  {
+    "label": "Obsidius",
+    "grade": {
+      "label": "B",
+      "background": "blue-500",
+      "hex": "#6d9eeb",
+      "text": "black",
+      "level": 3
+    },
+    "times": {
+      "alien": "02:35.852",
+      "player": "02:43.285",
+      "intermediate": "03:24.958",
+      "noob": "04:24.564"
+    },
+    "exchange": {
+      "link": "https://trackmania.exchange/maps/63916/rpg-obsidius",
+      "id": "63916",
+      "author": "ziyx",
+      "thumbnail": "https://trackmania.exchange/maps/screenshot_normal/63916"
+    }
+  },
+  {
+    "label": "Lodeie",
+    "grade": {
+      "label": "B",
+      "background": "blue-500",
+      "hex": "#6d9eeb",
+      "text": "black",
+      "level": 3
+    },
+    "times": {
+      "alien": "03:15.545",
+      "player": "03:24.541",
+      "intermediate": "04:05.654",
+      "noob": "05:23.254"
+    },
+    "exchange": {
+      "link": "https://trackmania.exchange/maps/160723/rpg-lodeie",
+      "id": "160723",
+      "author": "delaweed",
+      "thumbnail": "https://trackmania.exchange/maps/screenshot_normal/160723"
+    }
+  },
+  {
+    "label": "Octahedron City",
+    "grade": {
+      "label": "B",
+      "background": "blue-500",
+      "hex": "#6d9eeb",
+      "text": "black",
+      "level": 3
+    },
+    "times": {
+      "alien": "03:42.897",
+      "player": "03:58.555",
+      "intermediate": "04:39.336",
+      "noob": "06:25.166"
+    },
+    "exchange": {
+      "link": "https://trackmania.exchange/maps/72155/rpg-octahedron-city",
+      "id": "72155",
+      "author": "Mokuura",
+      "thumbnail": "https://trackmania.exchange/maps/screenshot_normal/72155"
+    }
+  },
+  {
+    "label": "Crimson Oasis",
+    "grade": {
+      "label": "B",
+      "background": "blue-500",
+      "hex": "#6d9eeb",
+      "text": "black",
+      "level": 3
+    },
+    "times": {
+      "alien": "07:26.977",
+      "player": "07:52.453",
+      "intermediate": "08:55.173",
+      "noob": "10:02.471"
+    },
+    "exchange": {
+      "link": "https://trackmania.exchange/maps/190317/rpg-crimson-oasis",
+      "id": "190317",
+      "author": "ziyx",
+      "thumbnail": "https://trackmania.exchange/maps/screenshot_normal/190317"
+    }
+  },
+  {
+    "label": "KingSlayer",
+    "grade": {
+      "label": "A",
+      "background": "yellow-300",
+      "hex": "#fff2cc",
+      "text": "black",
+      "level": 4
+    },
+    "times": {
+      "alien": "03:35.453",
+      "player": "03:44.555",
+      "intermediate": "04:45.125",
+      "noob": "06:55.125"
+    },
+    "exchange": {
+      "link": "https://trackmania.exchange/maps/20654/rpg-kingslayer-destroying-castles-in-the-sky",
+      "id": "20654",
+      "author": "ziyx",
+      "thumbnail": "https://trackmania.exchange/maps/screenshot_normal/20654"
+    }
+  },
+  {
+    "label": "La Berra",
+    "grade": {
+      "label": "A",
+      "background": "yellow-300",
+      "hex": "#fff2cc",
+      "text": "black",
+      "level": 4
+    },
+    "times": {
+      "alien": "03:39.546",
+      "player": "03:51.125",
+      "intermediate": "04:32.125",
+      "noob": "06:45.258"
+    },
+    "exchange": {
+      "link": "https://trackmania.exchange/maps/21634/rpg-la-berra",
+      "id": "21634",
+      "author": "Yannex",
+      "thumbnail": "https://trackmania.exchange/maps/screenshot_normal/21634"
+    }
+  },
+  {
+    "label": "Pyradoxise",
+    "grade": {
+      "label": "A",
+      "background": "yellow-300",
+      "hex": "#fff2cc",
+      "text": "black",
+      "level": 4
+    },
+    "times": {
+      "alien": "04:50.197",
+      "player": "05:01.894",
+      "intermediate": "05:49.521",
+      "noob": "07:08.145"
+    },
+    "exchange": {
+      "link": "https://trackmania.exchange/maps/204149/pyradoxise",
+      "id": "204149",
+      "author": "BimobTm",
+      "thumbnail": "https://trackmania.exchange/maps/screenshot_normal/204149"
+    }
+  },
+  {
+    "label": "Turbulent",
+    "grade": {
+      "label": "A",
+      "background": "yellow-300",
+      "hex": "#fff2cc",
+      "text": "black",
+      "level": 4
+    },
+    "times": {
+      "alien": "05:55.886",
+      "player": "06:09.415",
+      "intermediate": "07:15.415",
+      "noob": "10:15.112"
+    },
+    "exchange": {
+      "link": "https://trackmania.exchange/maps/65856/rpg-turbulent",
+      "id": "65856",
+      "author": "chuckiee",
+      "thumbnail": "https://trackmania.exchange/maps/screenshot_normal/65856"
+    }
+  },
+  {
+    "label": "Chromatic Enigma",
+    "grade": {
+      "label": "A",
+      "background": "yellow-300",
+      "hex": "#fff2cc",
+      "text": "black",
+      "level": 4
+    },
+    "times": {
+      "alien": "06:31.005",
+      "player": "06:58.415",
+      "intermediate": "07:55.774",
+      "noob": "11:01.039"
+    },
+    "exchange": {
+      "link": "https://trackmania.exchange/maps/145975/chromatic-enigma",
+      "id": "145975",
+      "author": "Qiraj",
+      "thumbnail": "https://trackmania.exchange/maps/screenshot_normal/145975"
+    }
+  },
+  {
+    "label": "Centaurus",
+    "grade": {
+      "label": "A",
+      "background": "yellow-300",
+      "hex": "#fff2cc",
+      "text": "black",
+      "level": 4
+    },
+    "times": {
+      "alien": "06:39.236",
+      "player": "07:15.294",
+      "intermediate": "09:13.543",
+      "noob": "11:55.158"
+    },
+    "exchange": {
+      "link": "https://trackmania.exchange/maps/23871/rpg-centaurus",
+      "id": "23871",
+      "author": "Krokro",
+      "thumbnail": "https://trackmania.exchange/maps/screenshot_normal/23871"
+    }
+  },
+  {
+    "label": "Castle Rush",
+    "grade": {
+      "label": "S",
+      "background": "amber-600",
+      "hex": "#f6b26b",
+      "text": "black",
+      "level": 5
+    },
+    "times": {
+      "alien": "01:59.109",
+      "player": "02:02.178",
+      "intermediate": "02:14.109",
+      "noob": "02:49.178"
+    },
+    "exchange": {
+      "link": "https://trackmania.exchange/maps/127367/mini-rpg-castle-rush",
+      "id": "127367",
+      "author": "akimaNN7",
+      "thumbnail": "https://trackmania.exchange/maps/screenshot_normal/127367"
+    }
+  },
+  {
+    "label": "Scar",
+    "grade": {
+      "label": "S",
+      "background": "amber-600",
+      "hex": "#f6b26b",
+      "text": "black",
+      "level": 5
+    },
+    "times": {
+      "alien": "02:07.890",
+      "player": "02:15.846",
+      "intermediate": "03:31.846",
+      "noob": "06:28.846"
+    },
+    "exchange": {
+      "link": "https://trackmania.exchange/maps/63908/rpg-scar",
+      "id": "63908",
+      "author": "Qiraj",
+      "thumbnail": "https://trackmania.exchange/maps/screenshot_normal/63908"
+    }
+  },
+  {
+    "label": "Lost Temple",
+    "grade": {
+      "label": "S",
+      "background": "amber-600",
+      "hex": "#f6b26b",
+      "text": "black",
+      "level": 5
+    },
+    "times": {
+      "alien": "03:13.088",
+      "player": "03:28.987",
+      "intermediate": "04:31.587",
+      "noob": "06:55.062"
+    },
+    "exchange": {
+      "link": "https://trackmania.exchange/maps/19557/rpg-lost-temple",
+      "id": "19557",
+      "author": "ziyx",
+      "thumbnail": "https://trackmania.exchange/maps/screenshot_normal/19557"
+    }
+  },
+  {
+    "label": "Mistophoros",
+    "grade": {
+      "label": "S",
+      "background": "amber-600",
+      "hex": "#f6b26b",
+      "text": "black",
+      "level": 5
+    },
+    "times": {
+      "alien": "04:16.897",
+      "player": "04:29.978",
+      "intermediate": "06:15.415",
+      "noob": "08:15.112"
+    },
+    "exchange": {
+      "link": "https://trackmania.exchange/maps/26725/rpg-mistophoros",
+      "id": "26725",
+      "author": "Heasto",
+      "thumbnail": "https://trackmania.exchange/maps/screenshot_normal/26725"
+    }
+  },
+  {
+    "label": "Cave de Toutataton ",
+    "grade": {
+      "label": "S",
+      "background": "amber-600",
+      "hex": "#f6b26b",
+      "text": "black",
+      "level": 5
+    },
+    "times": {
+      "alien": "07:18.325",
+      "player": "07:48.123",
+      "intermediate": "09:51.123",
+      "noob": "14:46.215"
+    },
+    "exchange": {
+      "link": "https://trackmania.exchange/maps/38829/rpg-cave-de-toutataton",
+      "id": "38829",
+      "author": "Gragarda",
+      "thumbnail": "https://trackmania.exchange/maps/screenshot_normal/38829"
+    }
+  },
+  {
+    "label": "Oriom",
+    "grade": {
+      "label": "S",
+      "background": "amber-600",
+      "hex": "#f6b26b",
+      "text": "black",
+      "level": 5
+    },
+    "times": {
+      "alien": "11:51.949",
+      "player": "12:45.548",
+      "intermediate": "17:45.201",
+      "noob": "29:13.235"
+    },
+    "exchange": {
+      "link": "https://trackmania.exchange/maps/42918/rpg-oriom",
+      "id": "42918",
+      "author": "fzztichta",
+      "thumbnail": "https://trackmania.exchange/maps/screenshot_normal/42918"
+    }
+  },
+  {
+    "label": "Castle of Heasto",
+    "grade": {
+      "label": "SS",
+      "background": "red-500",
+      "hex": "#ff0000",
+      "text": "black",
+      "level": 6
+    },
+    "times": {
+      "alien": "01:00.452",
+      "player": "01:03.963",
+      "intermediate": "01:05.999",
+      "noob": "01:19.963"
+    },
+    "exchange": {
+      "link": "https://trackmania.exchange/maps/106104/m-rpg-castle-of-heasto",
+      "id": "106104",
+      "author": "Heasto",
+      "thumbnail": "https://trackmania.exchange/maps/screenshot_normal/106104"
+    }
+  },
+  {
+    "label": "Celest",
+    "grade": {
+      "label": "SS",
+      "background": "red-500",
+      "hex": "#ff0000",
+      "text": "black",
+      "level": 6
+    },
+    "times": {
+      "alien": "03:21.954",
+      "player": "03:31.874",
+      "intermediate": "04:11.147",
+      "noob": "05:31.548"
+    },
+    "exchange": {
+      "link": "https://trackmania.exchange/maps/58907/rpg-celest",
+      "id": "58907",
+      "author": "Naxanria",
+      "thumbnail": "https://trackmania.exchange/maps/screenshot_normal/58907"
+    }
+  },
+  {
+    "label": "Artefact Act III - Kepler-B23",
+    "grade": {
+      "label": "SS",
+      "background": "red-500",
+      "hex": "#ff0000",
+      "text": "black",
+      "level": 6
+    },
+    "times": {
+      "alien": "04:07.850",
+      "player": "04:26.253",
+      "intermediate": "06:57.569",
+      "noob": "10:52.253"
+    },
+    "exchange": {
+      "link": "https://trackmania.exchange/maps/102656/rpg-artefact-act-iii-kepler-b23",
+      "id": "102656",
+      "author": "Heasto",
+      "thumbnail": "https://trackmania.exchange/maps/screenshot_normal/102656"
+    }
+  },
+  {
+    "label": "Ancient Ruins",
+    "grade": {
+      "label": "SS",
+      "background": "red-500",
+      "hex": "#ff0000",
+      "text": "black",
+      "level": 6
+    },
+    "times": {
+      "alien": "04:15.105",
+      "player": "04:26.325",
+      "intermediate": "07:19.652",
+      "noob": "09:35.125"
+    },
+    "exchange": {
+      "link": "https://trackmania.exchange/maps/21316/rpg-ancient-ruins",
+      "id": "21316",
+      "author": "Qiraj",
+      "thumbnail": "https://trackmania.exchange/maps/screenshot_normal/21316"
+    }
+  },
+  {
+    "label": "Utopium",
+    "grade": {
+      "label": "SS",
+      "background": "red-500",
+      "hex": "#ff0000",
+      "text": "black",
+      "level": 6
+    },
+    "times": {
+      "alien": "06:08.463",
+      "player": "06:19.652",
+      "intermediate": "07:15.152",
+      "noob": "08:49.840"
+    },
+    "exchange": {
+      "link": "https://trackmania.exchange/maps/88182/rpg-utopium",
+      "id": "88182",
+      "author": "fzztichta",
+      "thumbnail": "https://trackmania.exchange/maps/screenshot_normal/88182"
+    }
+  },
+  {
+    "label": "Natrium",
+    "grade": {
+      "label": "SS",
+      "background": "red-500",
+      "hex": "#ff0000",
+      "text": "black",
+      "level": 6
+    },
+    "times": {
+      "alien": "06:30.654",
+      "player": "06:45.524",
+      "intermediate": "08:22.251",
+      "noob": "18:25.574"
+    },
+    "exchange": {
+      "link": "https://trackmania.exchange/maps/173880/rpg-natrium",
+      "id": "173880",
+      "author": "Naxanria",
+      "thumbnail": "https://trackmania.exchange/maps/screenshot_normal/173880"
+    }
+  },
+  {
+    "label": "Forest Island",
+    "grade": {
+      "label": "Legend",
+      "background": "red-300",
+      "hex": "#cc0000",
+      "text": "black",
+      "level": 7
+    },
+    "times": {
+      "alien": "02:55.496",
+      "player": "03:05.671",
+      "intermediate": "03:20.458",
+      "noob": "06:05.671"
+    },
+    "exchange": {
+      "link": "https://trackmania.exchange/maps/185449/rpg-forest-island",
+      "id": "185449",
+      "author": "Nitralis",
+      "thumbnail": "https://trackmania.exchange/maps/screenshot_normal/185449"
+    }
+  },
+  {
+    "label": "Xero-Akoma",
+    "grade": {
+      "label": "Legend",
+      "background": "red-300",
+      "hex": "#cc0000",
+      "text": "black",
+      "level": 7
+    },
+    "times": {
+      "alien": "04:02.665",
+      "player": "04:12.123",
+      "intermediate": "05:45.123",
+      "noob": "09:27.236"
+    },
+    "exchange": {
+      "link": "https://trackmania.exchange/maps/74049/rpg-xero-akoma",
+      "id": "74049",
+      "author": "Heasto",
+      "thumbnail": "https://trackmania.exchange/maps/screenshot_normal/74049"
+    }
+  },
+  {
+    "label": "Tower",
+    "grade": {
+      "label": "Legend",
+      "background": "red-300",
+      "hex": "#cc0000",
+      "text": "black",
+      "level": 7
+    },
+    "times": {
+      "alien": "05:29.982",
+      "player": "05:41.874",
+      "intermediate": "07:45.489",
+      "noob": "11:35.489"
+    },
+    "exchange": {
+      "link": "https://trackmania.exchange/maps/111933/rpg-tower",
+      "id": "111933",
+      "author": "NeoriionTM",
+      "thumbnail": "https://trackmania.exchange/maps/screenshot_normal/111933"
+    }
+  },
+  {
+    "label": "Óneiro",
+    "grade": {
+      "label": "Legend",
+      "background": "red-300",
+      "hex": "#cc0000",
+      "text": "black",
+      "level": 7
+    },
+    "times": {
+      "alien": "05:59.699",
+      "player": "06:18.789",
+      "intermediate": "10:25.354",
+      "noob": "15:38.874"
+    },
+    "exchange": {
+      "link": "https://trackmania.exchange/maps/73320/rpg-neiro",
+      "id": "73320",
+      "author": "NeoriionTM",
+      "thumbnail": "https://trackmania.exchange/maps/screenshot_normal/73320"
+    }
+  },
+  {
+    "label": "City 17",
+    "grade": {
+      "label": "Legend",
+      "background": "red-300",
+      "hex": "#cc0000",
+      "text": "black",
+      "level": 7
+    },
+    "times": {
+      "alien": "06:35.158",
+      "player": "06:51.458",
+      "intermediate": "10:25.258",
+      "noob": "16:23.235"
+    },
+    "exchange": {
+      "link": "https://trackmania.exchange/maps/69974/rpg-city17",
+      "id": "69974",
+      "author": "Sympthome",
+      "thumbnail": "https://trackmania.exchange/maps/screenshot_normal/69974"
+    }
+  },
+  {
+    "label": "Mindor",
+    "grade": {
+      "label": "Legend",
+      "background": "red-300",
+      "hex": "#cc0000",
+      "text": "black",
+      "level": 7
+    },
+    "times": {
+      "alien": "08:43.784",
+      "player": "08:58.654",
+      "intermediate": "12:43.784",
+      "noob": "22:58.654"
+    },
+    "exchange": {
+      "link": "https://trackmania.exchange/maps/141492/mindor",
+      "id": "141492",
+      "author": "Yannex",
+      "thumbnail": "https://trackmania.exchange/maps/screenshot_normal/141492"
+    }
+  },
+  {
+    "label": "Citadel",
+    "grade": {
+      "label": "Legend",
+      "background": "red-300",
+      "hex": "#cc0000",
+      "text": "black",
+      "level": 7
+    },
+    "times": {
+      "alien": "10:38.235",
+      "player": "10:55.253",
+      "intermediate": "14:55.253",
+      "noob": "28:55.253"
+    },
+    "exchange": {
+      "link": "https://trackmania.exchange/maps/54547/rpg-citadel",
+      "id": "54547",
+      "author": "Sympthome",
+      "thumbnail": "https://trackmania.exchange/maps/screenshot_normal/54547"
+    }
+  },
+  {
+    "label": "Jungle",
+    "grade": {
+      "label": "Omniscient",
+      "background": "violet-900",
+      "hex": "#b4a7d6",
+      "text": "white",
+      "level": 8
+    },
+    "times": {
+      "alien": "04:29.723",
+      "player": "04:43.598",
+      "intermediate": "07:43.598",
+      "noob": "10:43.598"
+    },
+    "exchange": {
+      "link": "https://trackmania.exchange/maps/50566/rpg-jungle",
+      "id": "50566",
+      "author": "Qiraj",
+      "thumbnail": "https://trackmania.exchange/maps/screenshot_normal/50566"
+    }
+  },
+  {
+    "label": "Adhara",
+    "grade": {
+      "label": "Omniscient",
+      "background": "violet-900",
+      "hex": "#b4a7d6",
+      "text": "white",
+      "level": 8
+    },
+    "times": {
+      "alien": "06:18.561",
+      "player": "06:38.594",
+      "intermediate": "08:38.459",
+      "noob": "12:03.459"
+    },
+    "exchange": {
+      "link": "https://trackmania.exchange/maps/74035/rpg-adhara",
+      "id": "74035",
+      "author": "Fab",
+      "thumbnail": "https://trackmania.exchange/maps/screenshot_normal/74035"
+    }
+  },
+  {
+    "label": "North Pole Factory",
+    "grade": {
+      "label": "Omniscient",
+      "background": "violet-900",
+      "hex": "#b4a7d6",
+      "text": "white",
+      "level": 8
+    },
+    "times": {
+      "alien": "06:47.127",
+      "player": "07:23.459",
+      "intermediate": "10:47.561",
+      "noob": "21:41.564"
+    },
+    "exchange": {
+      "link": "https://trackmania.exchange/maps/81516/rpg-north-pole-factory",
+      "id": "81516",
+      "author": "Mokuura",
+      "thumbnail": "https://trackmania.exchange/maps/screenshot_normal/81516"
+    }
+  },
+  {
+    "label": "Oblivion",
+    "grade": {
+      "label": "Omniscient",
+      "background": "violet-900",
+      "hex": "#b4a7d6",
+      "text": "white",
+      "level": 8
+    },
+    "times": {
+      "alien": "07:42.123",
+      "player": "08:09.415",
+      "intermediate": "12:11.258",
+      "noob": "25:45.000"
+    },
+    "exchange": {
+      "link": "https://trackmania.exchange/maps/78381/rpg-oblivion",
+      "id": "78381",
+      "author": "Qiraj",
+      "thumbnail": "https://trackmania.exchange/maps/screenshot_normal/78381"
+    }
+  },
+  {
+    "label": "Artefact Act II  Downfall",
+    "grade": {
+      "label": "Omniscient",
+      "background": "violet-900",
+      "hex": "#b4a7d6",
+      "text": "white",
+      "level": 8
+    },
+    "times": {
+      "alien": "09:21.846",
+      "player": "09:46.158",
+      "intermediate": "13:17.647",
+      "noob": "27:37.384"
+    },
+    "exchange": {
+      "link": "https://trackmania.exchange/maps/83360/rpg-downfall-artefact-act-ii",
+      "id": "83360",
+      "author": "ziyx",
+      "thumbnail": "https://trackmania.exchange/maps/screenshot_normal/83360"
+    }
+  },
+  {
+    "label": "Concrete",
+    "grade": {
+      "label": "Omniscient",
+      "background": "violet-900",
+      "hex": "#b4a7d6",
+      "text": "white",
+      "level": 8
+    },
+    "times": {
+      "alien": "23:59.458",
+      "player": "24:40.812",
+      "intermediate": "35:59.458",
+      "noob": "49:40.812"
+    },
+    "exchange": {
+      "link": "https://trackmania.exchange/maps/120839/concrete-by-n00byzor",
+      "id": "120839",
+      "author": "bmx22c",
+      "thumbnail": "https://trackmania.exchange/maps/screenshot_normal/120839"
+    }
+  },
+  {
+    "label": "Quandary Islands",
+    "grade": {
+      "label": "Divin",
+      "background": "purple-500",
+      "hex": "#8e7cc3",
+      "text": "black",
+      "level": 9
+    },
+    "times": {
+      "alien": "05:38.231",
+      "player": "05:55.584",
+      "intermediate": "09:58.231",
+      "noob": "25:14.584"
+    },
+    "exchange": {
+      "link": "https://trackmania.exchange/tracks/view/117963"
+    }
+  },
+  {
+    "label": "Portal Mania",
+    "grade": {
+      "label": "Divin",
+      "background": "purple-500",
+      "hex": "#8e7cc3",
+      "text": "black",
+      "level": 9
+    },
+    "times": {
+      "alien": "11:59.090",
+      "player": "12:56.119",
+      "intermediate": "21:30.389",
+      "noob": "39:30.487"
+    },
+    "exchange": {
+      "link": "https://trackmania.exchange/maps/59807/rpg-portal-mania",
+      "id": "59807",
+      "author": "Glocom",
+      "thumbnail": "https://trackmania.exchange/maps/screenshot_normal/59807"
+    }
+  },
+  {
+    "label": "A NIGHT IN TOKYO",
+    "grade": {
+      "label": "Divin",
+      "background": "purple-500",
+      "hex": "#8e7cc3",
+      "text": "black",
+      "level": 9
+    },
+    "times": {
+      "alien": "15:59.489",
+      "player": "17:36.258",
+      "intermediate": "32:25.256",
+      "noob": "46:45.548"
+    },
+    "exchange": {
+      "link": "https://trackmania.exchange/maps/26389/rpg-a-night-in-tokyo",
+      "id": "26389",
+      "author": "Banano_TV",
+      "thumbnail": "https://trackmania.exchange/maps/screenshot_normal/26389"
+    }
+  },
+  {
+    "label": "Flip It",
+    "grade": {
+      "label": "Divin",
+      "background": "purple-500",
+      "hex": "#8e7cc3",
+      "text": "black",
+      "level": 9
+    },
+    "times": {
+      "alien": "16:35.165",
+      "player": "22:54.026",
+      "intermediate": "35:45.258",
+      "noob": "48:45.258"
+    },
+    "exchange": {
+      "link": "https://trackmania.exchange/maps/180041/flip-it",
+      "id": "180041",
+      "author": "Qiraj",
+      "thumbnail": "https://trackmania.exchange/maps/screenshot_normal/180041"
+    }
+  },
+  {
+    "label": "Rubik's Cube",
+    "grade": {
+      "label": "Divin",
+      "background": "purple-500",
+      "hex": "#8e7cc3",
+      "text": "black",
+      "level": 9
+    },
+    "times": {
+      "alien": "19:59.985",
+      "player": "22:20.587",
+      "intermediate": "45:30.458",
+      "noob": "75:30.852"
+    },
+    "exchange": {
+      "link": "https://trackmania.exchange/maps/29450/rpg-rubiks-cube",
+      "id": "29450",
+      "author": "Heasto",
+      "thumbnail": "https://trackmania.exchange/maps/screenshot_normal/29450"
+    }
+  },
+  {
+    "label": "The 100  Carcassonne",
+    "grade": {
+      "label": "Divin",
+      "background": "purple-500",
+      "hex": "#8e7cc3",
+      "text": "black",
+      "level": 9
+    },
+    "times": {
+      "alien": "31:00.000",
+      "player": "38:00.000",
+      "intermediate": "55:32.547",
+      "noob": "86:54.541"
+    },
+    "exchange": {
+      "link": "https://trackmania.exchange/maps/204908/rpg-the-100-carcassonne",
+      "id": "204908",
+      "author": "fzztichta",
+      "thumbnail": "https://trackmania.exchange/maps/screenshot_normal/204908"
+    }
+  },
+  {
+    "label": "Castle Rush 3",
+    "grade": {
+      "label": "God",
+      "background": "stone-900",
+      "hex": "#000000",
+      "text": "white",
+      "level": 10
+    },
+    "times": {
+      "alien": "04:00.218",
+      "player": "04:15.258",
+      "intermediate": "06:35.547",
+      "noob": "17:45.658"
+    },
+    "exchange": {
+      "link": "https://trackmania.exchange/maps/140511/rpg-trial-castle-rush-3",
+      "id": "140511",
+      "author": "akimaNN7",
+      "thumbnail": "https://trackmania.exchange/maps/screenshot_normal/140511"
+    }
+  },
+  {
+    "label": "The Rift\n  3722",
+    "grade": {
+      "label": "God",
+      "background": "stone-900",
+      "hex": "#000000",
+      "text": "white",
+      "level": 10
+    },
+    "times": {
+      "alien": "11:32.485",
+      "player": "12:43.125",
+      "intermediate": "22:55.125",
+      "noob": "45:55.125"
+    },
+    "exchange": {
+      "link": "https://trackmania.exchange/maps/54009/rpg-the-rift-3722",
+      "id": "54009",
+      "author": "blackpulse",
+      "thumbnail": "https://trackmania.exchange/maps/screenshot_normal/54009"
+    }
+  },
+  {
+    "label": "Quandary Pixel",
+    "grade": {
+      "label": "God",
+      "background": "stone-900",
+      "hex": "#000000",
+      "text": "white",
+      "level": 10
+    },
+    "times": {
+      "alien": "14:06.684",
+      "player": "16:49.439",
+      "intermediate": "52:49.439",
+      "noob": "87:49.439"
+    },
+    "exchange": {
+      "link": "https://trackmania.exchange/maps/73770/rpg-quandary-pixel",
+      "id": "73770",
+      "author": "Qiraj",
+      "thumbnail": "https://trackmania.exchange/maps/screenshot_normal/73770"
+    }
+  },
+  {
+    "label": "Falling Turtles (CP)",
+    "grade": {
+      "label": "God",
+      "background": "stone-900",
+      "hex": "#000000",
+      "text": "white",
+      "level": 10
+    },
+    "times": {
+      "alien": "17:25.256",
+      "player": "22:47.456",
+      "intermediate": "58:25.256",
+      "noob": "89:47.456"
+    },
+    "exchange": {
+      "link": "https://trackmania.exchange/maps/133539/falling-turtles-cp",
+      "id": "133539",
+      "author": "Qiraj",
+      "thumbnail": "https://trackmania.exchange/maps/screenshot_normal/133539"
+    }
+  },
+  {
+    "label": "LAB 77!",
+    "grade": {
+      "label": "God",
+      "background": "stone-900",
+      "hex": "#000000",
+      "text": "white",
+      "level": 10
+    },
+    "times": {
+      "alien": "24:48.845",
+      "player": "29:48.125",
+      "intermediate": "65:00.000",
+      "noob": "97:30.158"
+    },
+    "exchange": {
+      "link": "https://trackmania.exchange/maps/77483/rpg-lab-77",
+      "id": "77483",
+      "author": "Qiraj",
+      "thumbnail": "https://trackmania.exchange/maps/screenshot_normal/77483"
+    }
+  },
+  {
+    "label": "Narcissus",
+    "grade": {
+      "label": "No life",
+      "background": "violet-900",
+      "hex": "#20124d",
+      "text": "white",
+      "level": 11
+    },
+    "times": {
+      "alien": "666:66.666",
+      "player": "666:66.666",
+      "intermediate": "666:66.666",
+      "noob": "666:66.666"
+    },
+    "exchange": {
+      "link": "https://trackmania.exchange/maps/65600/rpg-narcissus   --->",
+      "id": "65600",
+      "author": "Fab",
+      "thumbnail": "https://trackmania.exchange/maps/screenshot_normal/65600"
+    }
+  }
+]
