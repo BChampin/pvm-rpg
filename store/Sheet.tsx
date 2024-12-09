@@ -42,7 +42,7 @@ export const SheetStoreProvider: React.FC<{ children: React.ReactNode }> = ({ ch
     let maps: Map[] = []
     if (!live) {
       try {
-        const responseFile = await fetch("/maps.json")
+        const responseFile = await fetch('maps.json')
         const jsonData = await responseFile.json()
         maps = jsonData
       } catch (err: any) {
