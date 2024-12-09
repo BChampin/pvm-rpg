@@ -11,11 +11,11 @@ export interface SheetStoreContextType {
   maps: Map[]
 
   // Functions
-  fetchSheetData: () => Promise<void>
+  fetchSheetData: (sheetName: string) => Promise<void>
   fetchMaps: () => Promise<void>
 }
 
-type MapGrade =
+export type MapGrade =
   | { label: 'E', background: 'lime-300', hex: '#d9ead3', text: 'black', level: 0 }
   | { label: 'D', background: 'lime-600', hex: '#93c47d', text: 'black', level: 1 }
   | { label: 'C', background: 'cyan-400', hex: '#c9daf8', text: 'black', level: 2 }

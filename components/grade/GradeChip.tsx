@@ -1,7 +1,7 @@
 import { Chip } from "@nextui-org/react"
-import { MapGrade } from "@/types"
+import { MapGrade } from "@/types/Sheet"
 
-export default function GradeChip({ grade }: MapGrade) {
+export default function GradeChip({ grade }: { grade: MapGrade}) {
   return (
     <Chip
       size="md"

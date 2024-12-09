@@ -22,7 +22,7 @@ export default function MapsTable() {
   return (
     <Table isStriped aria-label="Maps table">
       <TableHeader columns={columns}>
-        {(column: object) => <TableColumn key={column.key}>{column.label}</TableColumn>}
+        {(column: { key: string, label: string }) => <TableColumn key={column.key}>{column.label}</TableColumn>}
       </TableHeader>
       <TableBody items={maps}>
         {(map: Map) => (

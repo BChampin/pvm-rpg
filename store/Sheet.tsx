@@ -30,7 +30,7 @@ export const SheetStoreProvider: React.FC<{ children: React.ReactNode }> = ({ ch
       const text = await response.text()
       const json = JSON.parse(text.substring(47).slice(0, -2))
       return json
-    } catch (err) {
+    } catch (err: any) {
       setError(err.message)
     } finally {
       setLoading(false)
@@ -45,7 +45,7 @@ export const SheetStoreProvider: React.FC<{ children: React.ReactNode }> = ({ ch
         const responseFile = await fetch("/maps.json")
         const jsonData = await responseFile.json()
         maps = jsonData
-      } catch (err) {
+      } catch (err: any) {
         setError(err.message)
       } finally {
         setLoading(false)
@@ -55,7 +55,7 @@ export const SheetStoreProvider: React.FC<{ children: React.ReactNode }> = ({ ch
       const noviceJson = await fetchSheetData("PvM (Novice)")
       alienJson.table.rows[2].c.map((cell: any, cellIndex: number) => {
         if (cellIndex <= 1 || !cell.v) return null
-        let mapGrade
+        let mapGrade = getMapGrade('E')
         for (let gradeIndex = cellIndex; gradeIndex >= 2; gradeIndex--) {
           const grade = alienJson.table.rows[1].c[gradeIndex]?.v
           if (grade) {
@@ -121,7 +121,11 @@ export const SheetStoreProvider: React.FC<{ children: React.ReactNode }> = ({ ch
       error,
       maps,
       sortMethod,
-      setSortMethod
+      setSortMethod,
+      sheetUrl,
+      staticMaps,
+      fetchSheetData,
+      fetchMaps
     }}>
       {children}
     </SheetStoreContext.Provider>
