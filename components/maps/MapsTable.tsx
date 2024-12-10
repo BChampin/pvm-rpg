@@ -4,7 +4,7 @@ import { Map } from "@/types/Sheet"
 import GradeChip from "@/components/grade/GradeChip"
 
 export default function MapsTable() {
-  const { maps, loading, error } = useSheetStore()
+  const { maps, loading, error, timeNumberToStr } = useSheetStore()
   if (loading) return <p>Loading...</p>
   if (error) return <p>Error: {error}</p>
 
@@ -39,22 +39,22 @@ export default function MapsTable() {
             </TableCell>
             <TableCell>
               <div>
-                {map.times.alien}
+                {timeNumberToStr(map.times.alien)}
               </div>
             </TableCell>
             <TableCell>
               <div>
-                {map.times.player}
+                {timeNumberToStr(map.times.player)}
               </div>
             </TableCell>
             <TableCell>
               <div>
-                {map.times.intermediate}
+                {timeNumberToStr(map.times.intermediate)}
               </div>
             </TableCell>
             <TableCell>
               <div>
-                {map.times.noob}
+                {timeNumberToStr(map.times.noob)}
               </div>
             </TableCell>
             <TableCell>

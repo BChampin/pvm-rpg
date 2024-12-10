@@ -2,9 +2,7 @@ import type { Metadata } from "next"
 import localFont from "next/font/local"
 import "./globals.css"
 import Providers from "@/app/providers"
-
-import { Navbar, NavbarContent, NavbarItem, Link } from "@nextui-org/react"
-import { ThemeSwitcher } from "@/components/ThemeSwitcher"
+import NavbarComponent from "@/components/ui/NavbarComponent"
 
 const geistSans = localFont({
   src: "./fonts/GeistVF.woff",
@@ -28,32 +26,13 @@ export default function RootLayout({
   children: React.ReactNode
 }>) {
 
-  const navbarLinks = [
-    { label: "Home", href: "/" },
-    { label: "Maps", href: "/maps" },
-    { label: "Players", href: "/players" },
-    { label: "GSheet", href: process.env.NEXT_PUBLIC_SHEET_URL_HTML, target: "_blank" },
-  ]
   return (
     <html lang="en">
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
         <Providers>
-          <Navbar>
-            <NavbarContent className="sm:flex gap-4" justify="center">
-              {navbarLinks.map((link, index) => (
-                <NavbarItem key={index}>
-                  <Link href={link.href} target={link.target}>
-                    {link.label}
-                  </Link>
-                </NavbarItem>
-              ))}
-            </NavbarContent>
-            <NavbarContent justify="end">
-              <ThemeSwitcher />
-            </NavbarContent>
-          </Navbar>
+          <NavbarComponent />
           {children}
         </Providers>
       </body>

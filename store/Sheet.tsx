@@ -3,8 +3,10 @@
 import React, { createContext, useContext, useEffect, useState } from "react"
 import {
   Map,
+  Player,
   SheetStoreContextType,
-  getMapGrade
+  getMapGrade,
+  TimeRecord
 } from "@/types/Sheet"
 
 const SheetStoreContext = createContext<SheetStoreContextType | undefined>(undefined)
@@ -13,12 +15,21 @@ export const SheetStoreProvider: React.FC<{ children: React.ReactNode }> = ({ ch
   // Data
   const [sheetUrl, setSheetUrl] = useState<string>(process.env.NEXT_PUBLIC_SHEET_URL ?? "")
   const [maps, setMaps] = useState<Map[]>([])
+  const [players, setPlayers] = useState<Player[]>([])
   const [staticMaps, setStaticMaps] = useState<Map[]>([])
+  const [timeRecords, setTimeRecords] = useState<TimeRecord[]>([])
 
   const [loading, setLoading] = useState<boolean>(true)
   const [error, setError] = useState<string | null>(null)
 
   const [sortMethod, setSortMethod] = useState<string>("grade.ascending")
+
+  const timeNumberToStr = (time: number): string => {
+    const minutes = Math.floor(time / 60000)
+    const seconds = Math.floor((time % 60000) / 1000)
+    const millis = time % 1000
+    return `${String(minutes).padStart(2, '0')}:${String(seconds).padStart(2, '0')}.${String(millis).padStart(3, '0')}`
+  }
 
   const fetchSheetData = async (sheetName: string) => {
     setLoading(true)
@@ -37,19 +48,22 @@ export const SheetStoreProvider: React.FC<{ children: React.ReactNode }> = ({ ch
     }
   }
 
+  const fetchStaticData = async (file: string) => {
+    try {
+      const responseFile = await fetch(`/pvm-rpg/data/${file}.json`)
+      return await responseFile.json()
+    } catch (err: any) {
+      setError(err.message)
+    } finally {
+      setLoading(false)
+    }
+  }
+
   // Functions
   const fetchMaps = async (live = false) => {
     let maps: Map[] = []
     if (!live) {
-      try {
-        const responseFile = await fetch('maps.json')
-        const jsonData = await responseFile.json()
-        maps = jsonData
-      } catch (err: any) {
-        setError(err.message)
-      } finally {
-        setLoading(false)
-      }
+      maps = await fetchStaticData('maps')
     } else {
       const alienJson = await fetchSheetData("PvM (Aliens)")
       const noviceJson = await fetchSheetData("PvM (Novice)")
@@ -97,17 +111,40 @@ export const SheetStoreProvider: React.FC<{ children: React.ReactNode }> = ({ ch
         copyFrom.sort((a, b) => b.label.localeCompare(a.label))
         break
       case "duration.ascending":
-        copyFrom.sort((a, b) => a.times.alien.localeCompare(b.times.alien))
+        copyFrom.sort((a, b) => a.times.alien - b.times.alien)
         break
       case "duration.descending":
-        copyFrom.sort((a, b) => b.times.alien.localeCompare(a.times.alien))
+        copyFrom.sort((a, b) => b.times.alien - a.times.alien)
         break
     }
     setMaps(copyFrom)
   }
 
+  const fetchPlayers = async (live = false) => {
+    let players: Player[] = []
+    if (!live) {
+      players = await fetchStaticData('players')
+    } else {
+      players = []
+    }
+    setPlayers(players.filter(x => !!x))
+  }
+
+  const fetchTimeRecords = async (live = false) => {
+    let timeRecords: TimeRecord[] = []
+    if (!live) {
+      timeRecords = await fetchStaticData('times')
+    } else {
+      timeRecords = []
+    }
+    setTimeRecords(timeRecords.filter(x => !!x))
+  }
+
+
   useEffect(() => {
     fetchMaps()
+    fetchPlayers()
+    fetchTimeRecords()
   }, [])
 
   useEffect(() => {
@@ -125,7 +162,12 @@ export const SheetStoreProvider: React.FC<{ children: React.ReactNode }> = ({ ch
       sheetUrl,
       staticMaps,
       fetchSheetData,
-      fetchMaps
+      fetchMaps,
+      players,
+      fetchPlayers,
+      timeRecords,
+      fetchTimeRecords,
+      timeNumberToStr
     }}>
       {children}
     </SheetStoreContext.Provider>
