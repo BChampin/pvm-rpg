@@ -1,7 +1,7 @@
-'use client'
+'use client';
 
-import { Suspense } from "react"
-import PlayersTable from "@/components/players/PlayersTable"
+import PlayersTable from '@/components/players/PlayersTable';
+import { Suspense } from 'react';
 
 export default function Players() {
   return (
@@ -12,5 +12,5 @@ export default function Players() {
         </Suspense>
       </div>
     </div>
-  )
+  );
 }

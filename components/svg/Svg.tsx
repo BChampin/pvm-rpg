@@ -1,4 +1,4 @@
-import { SVGProps } from "react"
+import { SVGProps } from 'react';
 
 export type IconSvgProps = SVGProps<SVGSVGElement> & {
   size?: number;
@@ -34,7 +34,10 @@ export const SearchIcon = (props: IconSvgProps) => {
   );
 };
 
-export const ChevronDownIcon = ({strokeWidth = 1.5, ...otherProps}: IconSvgProps) => {
+export const ChevronDownIcon = ({
+  strokeWidth = 1.5,
+  ...otherProps
+}: IconSvgProps) => {
   return (
     <svg
       aria-hidden="true"

@@ -1,32 +1,38 @@
-"use client"
+'use client';
 
-import { useTheme } from "next-themes"
-import { useEffect, useState } from "react"
-import { Switch } from "@nextui-org/react"
-import { PiMoon, PiSun } from "react-icons/pi"
+import { PiMoon, PiSun } from 'react-icons/pi';
+import { useEffect, useState } from 'react';
+import { Switch } from '@nextui-org/react';
+import { useLocalization } from '@/store/Localization';
+import { useTheme } from 'next-themes';
 
 export function ThemeSwitcher() {
-  const [mounted, setMounted] = useState(false)
-  const { theme, setTheme } = useTheme()
+  const { i18n } = useLocalization();
+  const [mounted, setMounted] = useState(false);
+  const { theme, setTheme } = useTheme();
+
+  const toggleTheme = () => {
+    setTheme(theme === 'dark' ? 'light' : 'dark');
+  };
 
   useEffect(() => {
-    setMounted(true)
-  }, [])
-
-  const toggleTheme = () => { setTheme(theme === "dark" ? "light" : "dark") }
-
-  if (!mounted) return null
+    setMounted(true);
+  }, []);
+  if (!mounted) return null;
 
   return (
     <div className="flex items-center">
       <Switch
-        isSelected={theme === "dark"}
+        isSelected={theme === 'dark'}
         onChange={toggleTheme}
         size="lg"
         color="primary"
         startContent={<PiMoon />}
         endContent={<PiSun />}
       />
+      <span className="flex sm:hidden font-bold ml-1">
+        {i18n(`nav.mode.${theme}`)}
+      </span>
     </div>
-  )
+  );
 }

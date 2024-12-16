@@ -1,66 +1,62 @@
-import { useSheetStore } from "@/store/Sheet"
-import { Link, Table, TableHeader, TableColumn, TableBody, TableRow, TableCell } from "@nextui-org/react"
-import { Map } from "@/types/Sheet"
-import GradeChip from "@/components/chips/GradeChip"
+import {
+  Link,
+  Table,
+  TableBody,
+  TableCell,
+  TableColumn,
+  TableHeader,
+  TableRow,
+} from '@nextui-org/react';
+import GradeChip from '@/components/chips/GradeChip';
+import { Map } from '@/types/Sheet';
+import { useSheetStore } from '@/store/Sheet';
 
 export default function MapsTable() {
-  const { maps, loading, error, timeNumberToStr } = useSheetStore()
-  if (loading) return <p>Loading...</p>
-  if (error) return <p>Error: {error}</p>
+  const { maps, loading, error, timeNumberToStr } = useSheetStore();
+  if (loading) return <p>Loading...</p>;
+  if (error) return <p>Error: {error}</p>;
 
   const columns = [
-    { key: "label", label: "Map" },
-    { key: "grade.label", label: "Grade" },
-    { key: "times.alien", label: "Alien" },
-    { key: "times.player", label: "Player" },
-    { key: "times.intermediate", label: "Intermediate" },
-    { key: "times.noob", label: "Noob" },
-    { key: "exchange.author", label: "Author" },
-    { key: "exchange.link", label: "Link" },
-  ]
+    { key: 'label', label: 'Map' },
+    { key: 'grade.label', label: 'Grade' },
+    { key: 'times.alien', label: 'Alien' },
+    { key: 'times.player', label: 'Player' },
+    { key: 'times.intermediate', label: 'Intermediate' },
+    { key: 'times.noob', label: 'Noob' },
+    { key: 'exchange.author', label: 'Author' },
+    { key: 'exchange.link', label: 'Link' },
+  ];
 
   return (
     <Table isStriped aria-label="Maps table">
       <TableHeader columns={columns}>
-        {(column: { key: string, label: string }) => <TableColumn key={column.key}>{column.label}</TableColumn>}
+        {(column: { key: string; label: string }) => (
+          <TableColumn key={column.key}>{column.label}</TableColumn>
+        )}
       </TableHeader>
       <TableBody items={maps}>
         {(map: Map) => (
           <TableRow key={map.label}>
             <TableCell>
-              <div className="font-bold">
-                {map.label}
-              </div>
+              <div className="font-bold">{map.label}</div>
             </TableCell>
             <TableCell>
-              <div>
-                {map.grade && <GradeChip grade={map.grade} />}
-              </div>
+              <div>{map.grade && <GradeChip grade={map.grade} />}</div>
             </TableCell>
             <TableCell>
-              <div>
-                {timeNumberToStr(map.times.alien)}
-              </div>
+              <div>{timeNumberToStr(map.times.alien)}</div>
             </TableCell>
             <TableCell>
-              <div>
-                {timeNumberToStr(map.times.player)}
-              </div>
+              <div>{timeNumberToStr(map.times.player)}</div>
             </TableCell>
             <TableCell>
-              <div>
-                {timeNumberToStr(map.times.intermediate)}
-              </div>
+              <div>{timeNumberToStr(map.times.intermediate)}</div>
             </TableCell>
             <TableCell>
-              <div>
-                {timeNumberToStr(map.times.noob)}
-              </div>
+              <div>{timeNumberToStr(map.times.noob)}</div>
             </TableCell>
             <TableCell>
-              <div>
-                {map.exchange.author}
-              </div>
+              <div>{map.exchange.author}</div>
             </TableCell>
             <TableCell>
               <div className="flex">
@@ -73,5 +69,5 @@ export default function MapsTable() {
         )}
       </TableBody>
     </Table>
-  )
+  );
 }

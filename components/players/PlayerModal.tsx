@@ -1,11 +1,17 @@
-import { Avatar, Divider, Modal, ModalContent, useDisclosure } from "@nextui-org/react"
-import { Player } from "@/types/Sheet"
-import FameChip from "@/components/chips/FameChip"
+import {
+  Avatar,
+  Divider,
+  Modal,
+  ModalContent,
+  useDisclosure,
+} from '@nextui-org/react';
+import FameChip from '@/components/chips/FameChip';
+import { Player } from '@/types/Sheet';
 
 export default function PlayerModal({ player }: { player: Player }) {
-  const { onOpenChange } = useDisclosure()
+  const { onOpenChange } = useDisclosure();
 
-  console.log(player)
+  console.log(player);
 
   return (
     <Modal isOpen onOpenChange={onOpenChange} className="p-8">
@@ -13,9 +19,7 @@ export default function PlayerModal({ player }: { player: Player }) {
         <div className="flex flex-col">
           <div className="flex items-center gap-2">
             <Avatar name={player.name} />
-            <span className="text-2xl">
-              {player.name}
-            </span>
+            <span className="text-2xl">{player.name}</span>
           </div>
         </div>
         <Divider className="m-2" />
@@ -29,9 +33,8 @@ export default function PlayerModal({ player }: { player: Player }) {
             </div>
           ))}
         </div>
-
         TOUTES LES STATS
       </ModalContent>
     </Modal>
-  )
+  );
 }

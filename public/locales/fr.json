@@ -2,7 +2,11 @@
   "nav.home": "Accueil",
   "nav.maps": "Cartes",
   "nav.players": "Joueurs",
-  "nav.records": "Temps",
+  "nav.records": "Temps enregistrés",
+  "nav.language.en": "English",
+  "nav.language.fr": "Français",
+  "nav.mode.dark": "Mode sombre",
+  "nav.mode.light": "Mode clair",
 
   "home.welcome": "Bienvenue sur le",
   "home.intro.title": "Introduction",
