@@ -171,7 +171,8 @@ export type Fame = {
   text: (typeof FameOptions)[keyof typeof FameOptions]['text']
 }
 
-export function getFame(level: keyof typeof FameOptions): Fame {
+export function getFame(nb: number): Fame {
+  const level = nb as keyof typeof FameOptions
   const fameData = FameOptions[level as keyof typeof FameOptions]
   return { level, ...fameData }
 }

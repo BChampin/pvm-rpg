@@ -47,7 +47,7 @@ export default function PlayersTable () {
     column: "noSort",
     direction: "ascending",
   })
-  const [rowsPerPage, setRowsPerPage] = useState(20)
+  const [rowsPerPage] = useState(20)
   const [page, setPage] = useState(1)
 
   const filteredItems = React.useMemo(() => {
@@ -181,7 +181,7 @@ export default function PlayersTable () {
         </div>
       </div>
     );
-  }, [items.length, page, pages, filterValue])
+  }, [items.length, page, pages, filterValue, onPreviousPage, onNextPage])
 
 
   return (
