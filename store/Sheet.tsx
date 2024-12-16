@@ -6,7 +6,8 @@ import {
   Player,
   SheetStoreContextType,
   getMapGrade,
-  TimeRecord
+  TimeRecord,
+  getFame
 } from "@/types/Sheet"
 
 const SheetStoreContext = createContext<SheetStoreContextType | undefined>(undefined)
@@ -127,6 +128,35 @@ export const SheetStoreProvider: React.FC<{ children: React.ReactNode }> = ({ ch
     } else {
       players = []
     }
+
+    if (timeRecords.length && staticMaps.length) {
+      for (const player of players) {
+        const playerTimes = timeRecords.filter(timeRecord => timeRecord.playerId === player.id)
+        const famesMap = {
+          alien: 0,
+          player: 0,
+          intermediate: 0,
+          noob: 0
+        }
+        player.nbRecords = playerTimes.length
+        for (const map of staticMaps) {
+          const mapRecord = playerTimes.find(timeRecord => timeRecord.mapId === map.exchange.id)
+          if (mapRecord) {
+            famesMap.alien += Number(mapRecord.time <= map.times.alien)
+            famesMap.player += Number(mapRecord.time <= map.times.player)
+            famesMap.intermediate += Number(mapRecord.time <= map.times.intermediate)
+            famesMap.noob += Number(mapRecord.time <= map.times.noob)
+          }
+        }
+        player.fames = {
+          alien: getFame(famesMap.alien),
+          player: getFame(famesMap.player),
+          intermediate: getFame(famesMap.intermediate),
+          noob: getFame(famesMap.noob),
+        }
+      }
+    }
+
     setPlayers(players.filter(x => !!x))
   }
 
@@ -143,9 +173,12 @@ export const SheetStoreProvider: React.FC<{ children: React.ReactNode }> = ({ ch
 
   useEffect(() => {
     fetchMaps()
-    fetchPlayers()
     fetchTimeRecords()
   }, [])
+
+  useEffect(() => {
+    fetchPlayers()
+  }, [staticMaps])
 
   useEffect(() => {
     sortMapsFunction()
