@@ -1,5 +1,5 @@
 import { useSheetStore } from "@/store/Sheet"
-import GradeChip from "@/components/grade/GradeChip"
+import GradeChip from "@/components/chips/GradeChip"
 import { Button, Card, CardHeader, CardFooter, Image, Link } from "@nextui-org/react"
 
 export default function MapsCard() {

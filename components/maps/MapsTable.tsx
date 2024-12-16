@@ -1,7 +1,7 @@
 import { useSheetStore } from "@/store/Sheet"
 import { Link, Table, TableHeader, TableColumn, TableBody, TableRow, TableCell } from "@nextui-org/react"
 import { Map } from "@/types/Sheet"
-import GradeChip from "@/components/grade/GradeChip"
+import GradeChip from "@/components/chips/GradeChip"
 
 export default function MapsTable() {
   const { maps, loading, error, timeNumberToStr } = useSheetStore()
