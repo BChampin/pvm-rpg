@@ -9,11 +9,20 @@ module.exports = {
     './node_modules/@nextui-org/theme/dist/**/*.{js,ts,jsx,tsx}',
   ],
   theme: {
+    // extend: {
+    //   // colors: {
+    //   //   background: "var(--background)",
+    //   //   foreground: "var(--foreground)",
+    //   // },
+    // },
     extend: {
-      // colors: {
-      //   background: "var(--background)",
-      //   foreground: "var(--foreground)",
-      // },
+      colors: {
+        black: '#121212',
+        white: '#EFEFEF',
+        dark: {
+          DEFAULT: '#1a1a1a', // Your preferred dark background color
+        },
+      },
     },
   },
   darkMode: "class",

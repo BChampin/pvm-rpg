@@ -11,21 +11,33 @@ import {
   NavbarMenuItem,
   NavbarMenuToggle,
 } from '@nextui-org/react';
+import {
+  PiArrowSquareOut,
+  PiFlag,
+  PiHouse,
+  PiUsersThree,
+} from 'react-icons/pi';
 import { LanguageSwitcher } from '@/components/ui/LanguageSwitcher';
 import { ThemeSwitcher } from '@/components/ui/ThemeSwitcher';
 import { useLocalization } from '@/store/Localization';
 import { useState } from 'react';
 
+
 export default function NavbarComponent() {
   const { i18n } = useLocalization();
   const navbarLinks = [
-    { label: i18n('nav.home'), href: '/pvm-rpg' },
-    { label: i18n('nav.maps'), href: '/pvm-rpg/maps' },
-    { label: i18n('nav.players'), href: '/pvm-rpg/players' },
+    { label: i18n('nav.home'), href: '/pvm-rpg', icon: <PiHouse /> },
+    { label: i18n('nav.maps'), href: '/pvm-rpg/maps', icon: <PiFlag /> },
+    {
+      label: i18n('nav.players'),
+      href: '/pvm-rpg/players',
+      icon: <PiUsersThree />
+    },
     {
       label: 'GSheet',
       href: process.env.NEXT_PUBLIC_SHEET_URL_HTML,
       target: '_blank',
+      icon: <PiArrowSquareOut />
     },
   ];
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -49,30 +61,32 @@ export default function NavbarComponent() {
       </NavbarBrand>
       <NavbarContent className="hidden sm:flex gap-4" justify="center">
         {navbarLinks.map((link, index) => (
-          <NavbarItem key={index}>
+          <NavbarItem className="mx-2" key={index}>
             <Link
-              className="font-semibold"
+              className="font-semibold text-white hover:text-primary"
               href={link.href}
               target={link.target}
             >
+              <span className="text-2xl mr-2">{link.icon}</span>
               {link.label}
             </Link>
           </NavbarItem>
         ))}
       </NavbarContent>
-      <NavbarContent className="hidden" justify="end">
+      <NavbarContent className="hidden sm:flex" justify="end">
         <LanguageSwitcher />
         <ThemeSwitcher />
       </NavbarContent>
       <NavbarMenu className="flex flex-col justify-between">
         <div>
           {navbarLinks.map((link, index) => (
-            <NavbarMenuItem key={index}>
+            <NavbarMenuItem className="mx-2" key={index}>
               <Link
-                className="font-semibold my-4"
+                className="font-semibold my-4 text-white hover:text-primary"
                 href={link.href}
                 target={link.target}
               >
+                <span className="text-2xl mr-2">{link.icon}</span>
                 {link.label}
               </Link>
             </NavbarMenuItem>

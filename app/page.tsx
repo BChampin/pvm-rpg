@@ -21,7 +21,7 @@ export default function Home() {
       <main className="flex flex-col gap-8 row-start-2">
         <div className="flex justify-between">
           <div className="text-center sm:text-start">
-            <p className="text-2xl">{i18n('home.welcome')}</p>
+            <p className="text-2xl text-white">{i18n('home.welcome')}</p>
             <h1 className="text-7xl sm:text-8xl text-nowrap text-primary">
               PvM-RPG
             </h1>

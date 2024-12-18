@@ -21,6 +21,7 @@ import { ChevronDownIcon, SearchIcon } from '@/components/svg/Svg';
 import { useCallback, useMemo, useState } from 'react';
 import FameChip from '@/components/chips/FameChip';
 import { Player } from '@/types/Sheet';
+import { useLocalization } from '@/store/Localization';
 import { useSearchParams } from 'next/navigation';
 import { useSheetStore } from '@/store/Sheet';
 
@@ -33,6 +34,7 @@ const columns = [
 
 export default function PlayersTable() {
   const { players } = useSheetStore();
+  const { i18n } = useLocalization();
 
   const categoryOptions = useMemo(() => {
     return [
@@ -126,7 +128,13 @@ export default function PlayersTable() {
   const topContent = useMemo(() => {
     return (
       <div className="flex flex-col gap-4">
-        <div className="flex justify-between gap-3 items-end">
+        <div className="flex flex-col md:flex-row justify-between gap-3 items-end">
+          <div className="flex items-center">
+            <div className="font-bold text-3xl mr-3">{i18n('nav.players')}</div>
+            <span className="text-default-400 text-small">
+              Total : {players.length} {i18n('nav.players')}
+            </span>
+          </div>
           <Input
             isClearable
             className="w-full sm:max-w-[44%]"
@@ -163,11 +171,6 @@ export default function PlayersTable() {
             </Dropdown>
           </div>
         </div>
-        <div className="flex justify-between items-center">
-          <span className="text-default-400 text-small">
-            Total : {players.length} players
-          </span>
-        </div>
       </div>
     );
   }, [
@@ -177,6 +180,7 @@ export default function PlayersTable() {
     players.length,
     categoryOptions,
     onClear,
+    i18n
   ]);
 
   const bottomContent = useMemo(() => {
@@ -220,7 +224,7 @@ export default function PlayersTable() {
       bottomContent={bottomContent}
       bottomContentPlacement="outside"
       classNames={{
-        wrapper: 'max-h-[382px]',
+        wrapper: 'max-h-[500px]',
       }}
       sortDescriptor={sortDescriptor}
       topContent={topContent}
