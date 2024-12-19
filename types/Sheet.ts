@@ -1,23 +1,25 @@
 export interface SheetStoreContextType {
-  loading: boolean
-  error: string | null
+  loading: boolean;
+  error: string | null;
 
-  sortMethod: string
-  setSortMethod: Function
+  sortMethod: string;
+  setSortMethod: Function;
 
   // Data
-  sheetUrl: string
-  staticMaps: Map[]
-  maps: Map[]
-  players: Player[]
-  timeRecords: TimeRecord[]
+  sheetUrl: string;
+  staticMaps: Map[];
+  maps: Map[];
+  players: Player[];
+  timeRecords: TimeRecord[];
+  modalPlayer: Player | null;
 
   // Functions
-  fetchSheetData: (sheetName: string) => Promise<void>
-  fetchMaps: () => Promise<void>
-  fetchPlayers: () => Promise<void>
-  fetchTimeRecords: () => Promise<void>
-  timeNumberToStr: (time: number) => string
+  fetchSheetData: (sheetName: string) => Promise<void>;
+  fetchMaps: () => Promise<void>;
+  fetchPlayers: () => Promise<void>;
+  fetchTimeRecords: () => Promise<void>;
+  timeNumberToStr: (time: number) => string;
+  setModalPlayer: (player: Player | null) => Promise<void>;
 }
 
 const MapGradeOptions = {
@@ -29,68 +31,73 @@ const MapGradeOptions = {
   S: { background: 'amber-600', hex: '#f6b26b', text: 'black', level: 5 },
   SS: { background: 'red-500', hex: '#ff0000', text: 'black', level: 6 },
   Legend: { background: 'red-300', hex: '#cc0000', text: 'black', level: 7 },
-  Omniscient: { background: 'violet-900', hex: '#b4a7d6', text: 'white', level: 8 },
+  Omniscient: {
+    background: 'violet-900',
+    hex: '#b4a7d6',
+    text: 'white',
+    level: 8,
+  },
   Divin: { background: 'purple-500', hex: '#8e7cc3', text: 'black', level: 9 },
   God: { background: 'stone-900', hex: '#000000', text: 'white', level: 10 },
-  'No life': { background: 'violet-900', hex: '#20124d', text: 'white', level: 11 },
-} as const
+  'No life': {
+    background: 'violet-900',
+    hex: '#20124d',
+    text: 'white',
+    level: 11,
+  },
+} as const;
 
 export type MapGrade = {
-  label: keyof typeof MapGradeOptions
-  background: (typeof MapGradeOptions)[keyof typeof MapGradeOptions]['background']
-  hex: (typeof MapGradeOptions)[keyof typeof MapGradeOptions]['hex']
-  text: (typeof MapGradeOptions)[keyof typeof MapGradeOptions]['text']
-  level: (typeof MapGradeOptions)[keyof typeof MapGradeOptions]['level']
-}
+  label: keyof typeof MapGradeOptions;
+  background: (typeof MapGradeOptions)[keyof typeof MapGradeOptions]['background'];
+  hex: (typeof MapGradeOptions)[keyof typeof MapGradeOptions]['hex'];
+  text: (typeof MapGradeOptions)[keyof typeof MapGradeOptions]['text'];
+  level: (typeof MapGradeOptions)[keyof typeof MapGradeOptions]['level'];
+};
 
 export function getMapGrade(label: keyof typeof MapGradeOptions): MapGrade {
-  const mapGradeData = MapGradeOptions[label as keyof typeof MapGradeOptions]
-  return { label, ...mapGradeData }
+  const mapGradeData = MapGradeOptions[label as keyof typeof MapGradeOptions];
+  return { label, ...mapGradeData };
 }
-
 
 export type Map = {
-  label: string
-  grade: MapGrade
+  label: string;
+  grade: MapGrade;
   times: {
-    alien: number
-    player: number
-    intermediate: number
-    noob: number
-  }
+    alien: number;
+    player: number;
+    intermediate: number;
+    noob: number;
+  };
   exchange: {
-    link?: string
-    id?: number,
-    author?: string,
-    thumbnail?: string
-  }
-}
-
+    link?: string;
+    id?: number;
+    author?: string;
+    thumbnail?: string;
+  };
+};
 
 export type Player = {
-  id: string
-  name: string
-  rawFame: { // Used on generate script
-    alien?: string
-    player?: string
-    intermediate?: string
-    noob?: string
-  }
+  id: string;
+  name: string;
+  rawFame: {
+    // Used on generate script
+    alien?: string;
+    player?: string;
+    intermediate?: string;
+    noob?: string;
+  };
   fames: {
-    alien?: Fame
-    player?: Fame
-    intermediate?: Fame
-    noob?: Fame
-  }
-  category: PlayerCategory
-  nbRecords?: number
-}
+    alien?: Fame;
+    player?: Fame;
+    intermediate?: Fame;
+    noob?: Fame;
+  };
+  category: PlayerCategory;
+  nbRecords?: number;
+};
 
-export type PlayerCategory =
-  | 'Alien'
-  | 'Player'
-  | 'Novice'
-
+export type PlayerCategory = 'Alien' | 'Player' | 'Novice';
 
 const FameOptions = {
   0: { label: 'F', color: 'violet-800', text: 'black' },
@@ -162,31 +169,31 @@ const FameOptions = {
   66: { label: 'Éternel', color: 'yellow-500', text: 'black' },
   67: { label: 'No Life', color: 'violet-900', text: 'black' },
   68: { label: 'GOD', color: 'white', text: 'black' },
-} as const
+} as const;
 
 export type Fame = {
-  level: keyof typeof FameOptions
-  label: (typeof FameOptions)[keyof typeof FameOptions]['label']
-  color: (typeof FameOptions)[keyof typeof FameOptions]['color']
-  text: (typeof FameOptions)[keyof typeof FameOptions]['text']
-}
+  level: keyof typeof FameOptions;
+  label: (typeof FameOptions)[keyof typeof FameOptions]['label'];
+  color: (typeof FameOptions)[keyof typeof FameOptions]['color'];
+  text: (typeof FameOptions)[keyof typeof FameOptions]['text'];
+};
 
 export function getFame(nb: number): Fame {
-  const level = nb as keyof typeof FameOptions
-  const fameData = FameOptions[level as keyof typeof FameOptions]
-  return { level, ...fameData }
+  const level = nb as keyof typeof FameOptions;
+  const fameData = FameOptions[level as keyof typeof FameOptions];
+  return { level, ...fameData };
 }
 
 export type TimeRecord = {
-  playerId: string
-  mapId: number
-  time: number
-  category?: TimeCategory
-}
+  playerId: string;
+  mapId: number;
+  time: number;
+  category?: TimeCategory;
+};
 
 type TimeCategory =
- | 'Alien'
- | 'Player'
- | 'Intermediate'
- | 'Noob'
- | 'Not defined'
+  | 'Alien'
+  | 'Player'
+  | 'Intermediate'
+  | 'Noob'
+  | 'Not defined';

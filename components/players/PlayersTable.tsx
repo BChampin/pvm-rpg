@@ -18,7 +18,7 @@ import {
   TableRow,
 } from '@nextui-org/react';
 import { ChevronDownIcon, SearchIcon } from '@/components/svg/Svg';
-import { useCallback, useMemo, useState } from 'react';
+import { useCallback, useEffect, useMemo, useState } from 'react';
 import FameChip from '@/components/chips/FameChip';
 import { Player } from '@/types/Sheet';
 import { useLocalization } from '@/store/Localization';
@@ -33,7 +33,7 @@ const columns = [
 ];
 
 export default function PlayersTable() {
-  const { players } = useSheetStore();
+  const { players, setModalPlayer } = useSheetStore();
   const { i18n } = useLocalization();
 
   const categoryOptions = useMemo(() => {
@@ -122,8 +122,16 @@ export default function PlayersTable() {
 
   // Set from query on load
   const searchParams = useSearchParams();
-  const queryPlayer = searchParams.get('player');
-  if (queryPlayer && !filterValue.length) setFilterValue(queryPlayer);
+  useEffect(() => {
+    const queryPlayer = searchParams.get('player');
+    if (queryPlayer && !filterValue.length) {
+      setFilterValue(queryPlayer);
+      const toShowPlayer = players.find((player) =>
+        player.name.toLowerCase().match(queryPlayer.toLowerCase())
+      );
+      if (toShowPlayer) setModalPlayer(toShowPlayer);
+    }
+  }, [searchParams, players, filterValue.length, setModalPlayer]);
 
   const topContent = useMemo(() => {
     return (
@@ -180,7 +188,7 @@ export default function PlayersTable() {
     players.length,
     categoryOptions,
     onClear,
-    i18n
+    i18n,
   ]);
 
   const bottomContent = useMemo(() => {
@@ -218,52 +226,62 @@ export default function PlayersTable() {
   }, [page, pages, onPreviousPage, onNextPage]);
 
   return (
-    <Table
-      isHeaderSticky
-      aria-label="Players Table"
-      bottomContent={bottomContent}
-      bottomContentPlacement="outside"
-      classNames={{
-        wrapper: 'max-h-[500px]',
-      }}
-      sortDescriptor={sortDescriptor}
-      topContent={topContent}
-      topContentPlacement="outside"
-      isVirtualized
-      onSortChange={setSortDescriptor}
-    >
-      <TableHeader columns={columns}>
-        {(column) => (
-          <TableColumn key={column.uid} allowsSorting={column.sortable}>
-            {column.name}
-          </TableColumn>
-        )}
-      </TableHeader>
-      <TableBody emptyContent={'No players found'} items={sortedItems}>
-        {(player) => (
-          <TableRow key={player.id}>
-            <TableCell>
-              <div className="font-bold">{player.name}</div>
-            </TableCell>
-            <TableCell>
-              <p className="text-bold text-small capitalize">
-                {player.category}
-              </p>
-            </TableCell>
-            <TableCell>
-              {player.fames?.alien && <FameChip fame={player.fames.alien} />}
-              {player.fames?.player && <FameChip fame={player.fames.player} />}
-              {player.fames?.intermediate && (
-                <FameChip fame={player.fames.intermediate} />
-              )}
-              {player.fames?.noob && <FameChip fame={player.fames.noob} />}
-            </TableCell>
-            <TableCell>
-              <span>{player.nbRecords}</span>
-            </TableCell>
-          </TableRow>
-        )}
-      </TableBody>
-    </Table>
+    <div>
+      <Table
+        isHeaderSticky
+        aria-label="Players Table"
+        bottomContent={bottomContent}
+        bottomContentPlacement="outside"
+        classNames={{
+          wrapper: 'max-h-[500px]',
+        }}
+        sortDescriptor={sortDescriptor}
+        topContent={topContent}
+        topContentPlacement="outside"
+        isVirtualized
+        onSortChange={setSortDescriptor}
+        selectionBehavior="toggle"
+        selectionMode="single"
+        onRowAction={(key) => {
+          const toShowPlayer = players.find((player) => player.id === key);
+          if (toShowPlayer) setModalPlayer(toShowPlayer);
+        }}
+      >
+        <TableHeader columns={columns}>
+          {(column) => (
+            <TableColumn key={column.uid} allowsSorting={column.sortable}>
+              {column.name}
+            </TableColumn>
+          )}
+        </TableHeader>
+        <TableBody emptyContent={'No players found'} items={sortedItems}>
+          {(player) => (
+            <TableRow key={player.id}>
+              <TableCell>
+                <div className="font-bold">{player.name}</div>
+              </TableCell>
+              <TableCell>
+                <p className="text-bold text-small capitalize">
+                  {player.category}
+                </p>
+              </TableCell>
+              <TableCell>
+                {player.fames?.alien && <FameChip fame={player.fames.alien} />}
+                {player.fames?.player && (
+                  <FameChip fame={player.fames.player} />
+                )}
+                {player.fames?.intermediate && (
+                  <FameChip fame={player.fames.intermediate} />
+                )}
+                {player.fames?.noob && <FameChip fame={player.fames.noob} />}
+              </TableCell>
+              <TableCell>
+                <span>{player.nbRecords}</span>
+              </TableCell>
+            </TableRow>
+          )}
+        </TableBody>
+      </Table>
+    </div>
   );
 }

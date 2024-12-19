@@ -22,7 +22,6 @@ import { ThemeSwitcher } from '@/components/ui/ThemeSwitcher';
 import { useLocalization } from '@/store/Localization';
 import { useState } from 'react';
 
-
 export default function NavbarComponent() {
   const { i18n } = useLocalization();
   const navbarLinks = [
@@ -31,13 +30,13 @@ export default function NavbarComponent() {
     {
       label: i18n('nav.players'),
       href: '/pvm-rpg/players',
-      icon: <PiUsersThree />
+      icon: <PiUsersThree />,
     },
     {
       label: 'GSheet',
       href: process.env.NEXT_PUBLIC_SHEET_URL_HTML,
       target: '_blank',
-      icon: <PiArrowSquareOut />
+      icon: <PiArrowSquareOut />,
     },
   ];
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -51,7 +50,7 @@ export default function NavbarComponent() {
         />
         <Link href="/pvm-rpg">
           <Image
-            src="/pvm-rpg/assets/logo.png"
+            src="/pvm-rpg/assets/favicon.png"
             alt="Logo"
             width={50}
             height={50}
