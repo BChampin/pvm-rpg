@@ -48,7 +48,7 @@ module.exports = {
         'bg-amber-600',
         'bg-red-500',
         'bg-red-300',
-        'bg-violet-900',
+        'bg-violet-800',
         'bg-purple-500',
         'bg-stone-900',
         'bg-violet-900',

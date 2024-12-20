@@ -54,15 +54,17 @@ export default function Maps() {
             endContent={<PiGridFour />}
           />
           <Select
-            className="max-w-xs min-w-[200px]"
-            label="Sorting"
+            className="max-w-xs min-w-[200px] text-white"
+            label={i18n('nav.orderBy')}
             items={sortOptions}
             selectedKeys={[sortMethod]}
             variant="bordered"
             onChange={(option) => setSortMethod(option.target.value)}
           >
             {sortOptions.map((sortOption) => (
-              <SelectItem key={sortOption.value}>{sortOption.label}</SelectItem>
+              <SelectItem className="text-white" key={sortOption.value}>
+                {sortOption.label}
+              </SelectItem>
             ))}
           </Select>
         </div>

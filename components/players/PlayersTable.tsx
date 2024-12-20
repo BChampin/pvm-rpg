@@ -18,7 +18,7 @@ import {
   TableRow,
 } from '@nextui-org/react';
 import { ChevronDownIcon, SearchIcon } from '@/components/svg/Svg';
-import { useCallback, useEffect, useMemo, useState } from 'react';
+import { useCallback, useEffect, useMemo, useRef, useState } from 'react';
 import FameChip from '@/components/chips/FameChip';
 import { Player } from '@/types/Sheet';
 import { useLocalization } from '@/store/Localization';
@@ -121,15 +121,20 @@ export default function PlayersTable() {
   }, []);
 
   // Set from query on load
+  const hasRunEffect = useRef(false);
   const searchParams = useSearchParams();
   useEffect(() => {
+    if (hasRunEffect.current) return;
     const queryPlayer = searchParams.get('player');
     if (queryPlayer && !filterValue.length) {
       setFilterValue(queryPlayer);
-      const toShowPlayer = players.find((player) =>
-        player.name.toLowerCase().match(queryPlayer.toLowerCase())
-      );
-      if (toShowPlayer) setModalPlayer(toShowPlayer);
+      if (players && players.length > 0) {
+        const toShowPlayer = players.find((player) =>
+          player.name.toLowerCase().match(queryPlayer.toLowerCase())
+        );
+        if (toShowPlayer) setModalPlayer(toShowPlayer);
+        hasRunEffect.current = true;
+      }
     }
   }, [searchParams, players, filterValue.length, setModalPlayer]);
 
@@ -146,7 +151,7 @@ export default function PlayersTable() {
           <Input
             isClearable
             className="w-full sm:max-w-[44%]"
-            placeholder="Search by name..."
+            placeholder={i18n('nav.searchBy')}
             startContent={<SearchIcon />}
             value={filterValue}
             onClear={() => onClear()}
@@ -159,7 +164,7 @@ export default function PlayersTable() {
                   endContent={<ChevronDownIcon className="text-small" />}
                   variant="flat"
                 >
-                  Category
+                  {i18n('nav.category')}
                 </Button>
               </DropdownTrigger>
               <DropdownMenu
@@ -210,7 +215,7 @@ export default function PlayersTable() {
             variant="flat"
             onPress={onPreviousPage}
           >
-            Previous
+            {i18n('nav.previous')}
           </Button>
           <Button
             isDisabled={pages === 1}
@@ -218,12 +223,12 @@ export default function PlayersTable() {
             variant="flat"
             onPress={onNextPage}
           >
-            Next
+            {i18n('nav.next')}
           </Button>
         </div>
       </div>
     );
-  }, [page, pages, onPreviousPage, onNextPage]);
+  }, [page, pages, onPreviousPage, i18n, onNextPage]);
 
   return (
     <div>

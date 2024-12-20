@@ -18,7 +18,6 @@ export interface SheetStoreContextType {
   fetchMaps: () => Promise<void>;
   fetchPlayers: () => Promise<void>;
   fetchTimeRecords: () => Promise<void>;
-  timeNumberToStr: (time: number) => string;
   setModalPlayer: (player: Player | null) => Promise<void>;
 }
 
@@ -197,3 +196,22 @@ type TimeCategory =
   | 'Intermediate'
   | 'Noob'
   | 'Not defined';
+
+const LevelOptions = {
+  alien: { label: 'Alien', icon: 'author' },
+  player: { label: 'Player', icon: 'gold' },
+  intermediate: { label: 'Intermediate', icon: 'silver' },
+  noob: { label: 'Noob', icon: 'bronze' },
+} as const;
+
+export type Level = {
+  level: keyof typeof LevelOptions;
+  label: (typeof LevelOptions)[keyof typeof LevelOptions]['label'];
+  icon: (typeof LevelOptions)[keyof typeof LevelOptions]['icon'];
+};
+
+export function getLevel(lvl: string): Level {
+  const level = lvl as keyof typeof LevelOptions;
+  const levelData = LevelOptions[level as keyof typeof LevelOptions];
+  return { level, ...levelData };
+}

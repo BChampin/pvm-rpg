@@ -9,10 +9,11 @@ import {
 } from '@nextui-org/react';
 import GradeChip from '@/components/chips/GradeChip';
 import { Map } from '@/types/Sheet';
+import { timeNumberToStr } from '@/utils';
 import { useSheetStore } from '@/store/Sheet';
 
 export default function MapsTable() {
-  const { maps, loading, error, timeNumberToStr } = useSheetStore();
+  const { maps, loading, error } = useSheetStore();
   if (loading) return <p>Loading...</p>;
   if (error) return <p>Error: {error}</p>;
 
@@ -28,7 +29,7 @@ export default function MapsTable() {
   ];
 
   return (
-    <Table isStriped aria-label="Maps table">
+    <Table isStriped aria-label="Maps table" className="text-white">
       <TableHeader columns={columns}>
         {(column: { key: string; label: string }) => (
           <TableColumn key={column.key}>{column.label}</TableColumn>

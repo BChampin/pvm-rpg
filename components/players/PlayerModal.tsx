@@ -1,21 +1,80 @@
 'use client';
 
 import {
+  Accordion,
+  AccordionItem,
   Avatar,
-  AvatarGroup,
+  Card,
   Divider,
   Modal,
   ModalContent,
   useDisclosure,
 } from '@nextui-org/react';
-import { PiCheckBold, PiXBold } from 'react-icons/pi';
+import { Map, MapGrade, Player, TimeRecord, getLevel } from '@/types/Sheet';
+import { Medal, MedalGroup } from '@/components/ui/Medals';
+import { timeNumberToStr, upperFirst } from '@/utils';
 import FameChip from '@/components/chips/FameChip';
-import { Player } from '@/types/Sheet';
+import { useMemo } from 'react';
 import { useSheetStore } from '@/store/Sheet';
 
 export default function PlayerModal({ player }: { player: Player }) {
   const { onOpenChange } = useDisclosure();
-  const { setModalPlayer } = useSheetStore();
+  const { setModalPlayer, staticMaps, timeRecords } = useSheetStore();
+  const totalMedals = useMemo(() => {
+    return (
+      (player.fames.alien?.level ?? 0) +
+      (player.fames.player?.level ?? 0) +
+      (player.fames.intermediate?.level ?? 0) +
+      (player.fames.noob?.level ?? 0)
+    );
+  }, [player]);
+
+  const [categorizedDoneMaps] = useMemo(() => {
+    const playerTimeRecords = [...timeRecords].filter(
+      (timeRecord) => timeRecord.playerId === player.id
+    );
+
+    const categorizedDoneMaps: {
+      grade: MapGrade;
+      nbPerGrade: number;
+      categoryTimes: { map: Map; playerMapTime: TimeRecord }[];
+      missingMaps: Map[];
+    }[] = [];
+
+    staticMaps.forEach((map) => {
+      const playerMapTime = playerTimeRecords.find(
+        (ptr) => ptr.mapId === map.exchange.id
+      );
+      let gradeIndex = categorizedDoneMaps.findIndex(
+        (cdm) => cdm.grade.level === map.grade.level
+      );
+
+      // Init category
+      if (gradeIndex < 0) {
+        categorizedDoneMaps.push({
+          grade: map.grade,
+          nbPerGrade: staticMaps.filter(
+            (sm) => sm.grade.level === map.grade.level
+          ).length,
+          categoryTimes: [],
+          missingMaps: [],
+        });
+      }
+      gradeIndex = categorizedDoneMaps.findIndex(
+        (cdm) => cdm.grade.level === map.grade.level
+      );
+
+      if (playerMapTime) {
+        categorizedDoneMaps[gradeIndex].categoryTimes.push({
+          map,
+          playerMapTime,
+        });
+      } else {
+        categorizedDoneMaps[gradeIndex].missingMaps.push(map);
+      }
+    });
+    return [categorizedDoneMaps];
+  }, [player.id, staticMaps, timeRecords]);
 
   return (
     <Modal
@@ -23,94 +82,72 @@ export default function PlayerModal({ player }: { player: Player }) {
       onOpenChange={onOpenChange}
       onClose={() => setModalPlayer(null)}
       className="p-8 text-white"
+      scrollBehavior="inside"
+      size="3xl"
     >
       <ModalContent>
-        <div className="flex flex-col">
-          <div className="flex items-center gap-2">
+        <div className="flex flex-col sm:flex-row items-center justify-between gap-2">
+          <div className="flex items-center">
             <Avatar
               className="w-16 h-16 text-4xl mr-4"
               name={player.name.slice(0, 1)}
             />
             <span className="text-2xl">{player.name}</span>
           </div>
+          <div className="p-6 flex flex-row items-center gap-4">
+            <div className="text-2xl font-semibold text-nowrap">
+              {totalMedals} / {staticMaps.length * 4}
+            </div>
+            <MedalGroup />
+          </div>
         </div>
         <Divider className="m-2" />
         <div className="row text-lg text-default">Overall fame</div>
-        <div className="row">
-          {Object.entries(player.fames).map(([key, value]) => (
-            <div key={key}>
-              <span className="text-lg text-default-500">
-                {String(key).charAt(0).toUpperCase() + String(key).slice(1)}
-              </span>
-              <FameChip fame={value} />
-            </div>
+        <div className="grid grid-cols-2 sm:grid-cols-4 gap-2 justify-around">
+          {Object.entries(player.fames).map(([lvl, fame]) => (
+            <Card key={lvl} className="p-6 flex flex-col items-center">
+              <div className="flex flex-col sm:flex-row items-center gap-3">
+                <div>{upperFirst(lvl)}</div>
+                <FameChip fame={fame} />
+              </div>
+              <div className="flex flex-col sm:flex-row items-center gap-1">
+                <Medal level={getLevel(lvl)} />
+                <div className="text-2xl font-semibold text-nowrap">
+                  {fame.level} / {staticMaps.length}
+                </div>
+              </div>
+            </Card>
           ))}
         </div>
         <Divider className="m-2" />
         <div className="row text-lg text-default">Times</div>
-        <div className="row">
-          <AvatarGroup>
-            <Avatar
-              showFallback
-              classNames={{
-                base: 'bg-transparent -mr-4',
-              }}
-              fallback={<PiCheckBold className="text-green-600 text-2xl" />}
-            />
-            <Avatar
-              showFallback
-              classNames={{
-                base: 'bg-transparent -mr-4',
-              }}
-              fallback={<PiCheckBold className="text-green-600 text-2xl" />}
-            />
-            <Avatar
-              showFallback
-              classNames={{
-                base: 'bg-transparent -mr-4',
-              }}
-              fallback={<PiCheckBold className="text-green-600 text-2xl" />}
-            />
-            <Avatar
-              showFallback
-              classNames={{
-                base: 'bg-transparent -mr-4',
-              }}
-              fallback={<PiCheckBold className="text-green-600 text-2xl" />}
-            />
-          </AvatarGroup>
-          <AvatarGroup>
-            <Avatar
-              showFallback
-              classNames={{
-                base: 'bg-transparent -mr-4',
-              }}
-              fallback={<PiXBold className="text-red-500 text-2xl" />}
-            />
-            <Avatar
-              showFallback
-              classNames={{
-                base: 'bg-transparent -mr-4',
-              }}
-              fallback={<PiXBold className="text-red-500 text-2xl" />}
-            />
-            <Avatar
-              showFallback
-              classNames={{
-                base: 'bg-transparent -mr-4',
-              }}
-              fallback={<PiXBold className="text-red-500 text-2xl" />}
-            />
-            <Avatar
-              showFallback
-              classNames={{
-                base: 'bg-transparent -mr-4',
-              }}
-              fallback={<PiXBold className="text-red-500 text-2xl" />}
-            />
-          </AvatarGroup>
+        <div>
+          <Accordion selectionMode="single">
+            {categorizedDoneMaps.map((cat) => (
+              <AccordionItem
+                key={cat.grade.level}
+                aria-label={`${cat.grade.label} - ${cat.categoryTimes.length} / ${cat.nbPerGrade}`}
+                title={`${cat.grade.label} - ${cat.categoryTimes.length} / ${cat.nbPerGrade}`}
+              >
+                <div className="grid grid-cols-2 sm:grid-cols-3">
+                  {cat.categoryTimes.map((obj, index) => (
+                    <div key={index}>
+                      <span>{obj.map.label}</span>
+                      <span className="mx-1">-</span>
+                      <span>{timeNumberToStr(obj.playerMapTime.time)}</span>
+                      <MedalGroup map={obj.map} time={obj.playerMapTime.time} />
+                    </div>
+                  ))}
+                  {cat.missingMaps.map((map, index) => (
+                    <div key={index} className="text-zinc-600">
+                      <span>{map.label}</span>
+                    </div>
+                  ))}
+                </div>
+              </AccordionItem>
+            ))}
+          </Accordion>
         </div>
-        TOUTES LES STATS
       </ModalContent>
     </Modal>
   );

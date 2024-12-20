@@ -7,7 +7,11 @@
   "nav.language.fr": "Français",
   "nav.mode.dark": "Mode sombre",
   "nav.mode.light": "Mode clair",
-
+  "nav.previous": "Précédent",
+  "nav.next": "Suivant",
+  "nav.category": "Catégorie",
+  "nav.searchBy": "Chercher par pseudo ...",
+  "nav.orderBy": "Tri",
   "home.welcome": "Bienvenue sur le",
   "home.intro.title": "Introduction",
   "home.intro.p1": "Bienvenue dans le PvM RPG, conçu pour vous permettre de vous mesurer à différents niveaux de défis en fonction de votre expérience. Que vous soyez novice ou joueur expérimenté, vous trouverez ici des challenges adaptés à votre niveau. Pourquoi PVM ? Tout simplement l'acronyme de Players versus Map",

@@ -33,13 +33,6 @@ export const SheetStoreProvider: React.FC<{ children: React.ReactNode }> = ({
 
   const [modalPlayer, setModalPlayer] = useState<Player | null>(null);
 
-  const timeNumberToStr = (time: number): string => {
-    const minutes = Math.floor(time / 60000);
-    const seconds = Math.floor((time % 60000) / 1000);
-    const millis = time % 1000;
-    return `${String(minutes).padStart(2, '0')}:${String(seconds).padStart(2, '0')}.${String(millis).padStart(3, '0')}`;
-  };
-
   const fetchSheetData = async (sheetName: string) => {
     setLoading(true);
     try {
@@ -214,7 +207,6 @@ export const SheetStoreProvider: React.FC<{ children: React.ReactNode }> = ({
         fetchPlayers,
         timeRecords,
         fetchTimeRecords,
-        timeNumberToStr,
         modalPlayer,
         setModalPlayer,
       }}
