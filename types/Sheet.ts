@@ -18,7 +18,7 @@ export interface SheetStoreContextType {
   fetchMaps: () => Promise<void>;
   fetchPlayers: () => Promise<void>;
   fetchTimeRecords: () => Promise<void>;
-  setModalPlayer: (player: Player | null) => Promise<void>;
+  setModalPlayer: Function;
 }
 
 const MapGradeOptions = {
