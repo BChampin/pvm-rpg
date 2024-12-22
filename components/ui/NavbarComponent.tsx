@@ -34,7 +34,7 @@ export default function NavbarComponent() {
     },
     {
       label: 'GSheet',
-      href: 'https://docs.google.com/spreadsheets/u/0/d/1z1n6LfHMskAzD4N6CTNrnhyjFtgN_54TGlAyoU6eOnk/htmlview',
+      href: process.env.NEXT_PUBLIC_SHEET_URL_HTML,
       target: '_blank',
       icon: <PiArrowSquareOut />,
     },
