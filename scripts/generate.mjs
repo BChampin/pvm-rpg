@@ -138,6 +138,7 @@ async function fetchSheetData(sheetName) {
 }
 
 async function generateMaps() {
+  console.log('>> Generating maps ...');
   try {
     const alienJson = await fetchSheetData('PvM (Aliens)');
     const noviceJson = await fetchSheetData('PvM (Novice)');
@@ -156,8 +157,20 @@ async function generateMaps() {
 
         // Building exchange object
         const exchange = {};
-        const link = alienJson.table.rows[5].c[cellIndex]?.v ?? undefined;
+        let link = alienJson.table.rows[5].c[cellIndex]?.v ?? undefined;
         if (link) {
+          // Special not properly formatted links
+          if (
+            link === 'https://trackmania.exchange/tracks/view/205627/rpg-inside'
+          ) {
+            link = 'https://trackmania.exchange/maps/205627/rpg-inside';
+          } else if (
+            link === 'https://trackmania.exchange/tracks/view/117963'
+          ) {
+            link =
+              'https://trackmania.exchange/maps/117963/rpg-quandary-islands';
+          }
+
           exchange.link = link;
           const match = link.match(new RegExp(/\/maps\/(\d+)\//));
           if (match && match[1]) {
@@ -190,13 +203,14 @@ async function generateMaps() {
     );
     const maps = (await Promise.all(mapsPromises)).filter((x) => !!x);
     writeData('maps', maps);
-    console.log('Maps generated successfully!');
+    console.log(`Maps generated successfully! - ${maps.length} maps`);
   } catch (error) {
     console.error('Error generating maps:', error);
   }
 }
 
 async function generatePlayers() {
+  console.log('>> Generating players ...');
   try {
     // Gather maps
     const mapsIdFromCol = {};
@@ -305,6 +319,39 @@ async function generatePlayers() {
   }
 }
 
+function setCurrentDataUpdateTimestamp() {
+  const currentTimestamp = new Date().toISOString();
+  fs.readFile('.env', 'utf8', (err, data) => {
+    if (err) {
+      console.error('Error reading .env file:', err);
+      return;
+    }
+
+    const updatedData = data
+      .split('\n')
+      .map((line) => {
+        if (line.startsWith('NEXT_PUBLIC_DATA_UPDATE_TIMESTAMP=')) {
+          return `NEXT_PUBLIC_DATA_UPDATE_TIMESTAMP=${currentTimestamp}`;
+        }
+        return line;
+      })
+      .join('\n');
+
+    // Write the updated content back to the .env file
+    fs.writeFile('.env', updatedData, 'utf8', (err) => {
+      if (err) {
+        console.error('Error writing to .env file:', err);
+      } else {
+        console.log(
+          'Updated NEXT_PUBLIC_DATA_UPDATE_TIMESTAMP to:',
+          currentTimestamp
+        );
+      }
+    });
+  });
+}
+
 // Run the script
-// generateMaps();
+generateMaps();
 generatePlayers();
+setCurrentDataUpdateTimestamp();

@@ -29,7 +29,7 @@ export default function MapsTable() {
   ];
 
   return (
-    <Table isStriped aria-label="Maps table" className="text-white">
+    <Table isStriped aria-label="Maps table" className="text-foreground">
       <TableHeader columns={columns}>
         {(column: { key: string; label: string }) => (
           <TableColumn key={column.key}>{column.label}</TableColumn>

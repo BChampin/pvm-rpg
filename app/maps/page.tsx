@@ -43,7 +43,9 @@ export default function Maps() {
   return (
     <div>
       <div className="flex items-center justify-between my-2 px-4">
-        <div className="font-bold text-3xl">{i18n('nav.maps')}</div>
+        <div className="font-bold text-3xl text-foreground">
+          {i18n('nav.maps')}
+        </div>
         <div className="flex nowrap">
           <Switch
             isSelected={isTableView}
@@ -54,7 +56,7 @@ export default function Maps() {
             endContent={<PiGridFour />}
           />
           <Select
-            className="max-w-xs min-w-[200px] text-white"
+            className="max-w-xs min-w-[200px] text-foreground"
             label={i18n('nav.orderBy')}
             items={sortOptions}
             selectedKeys={[sortMethod]}
@@ -62,7 +64,7 @@ export default function Maps() {
             onChange={(option) => setSortMethod(option.target.value)}
           >
             {sortOptions.map((sortOption) => (
-              <SelectItem className="text-white" key={sortOption.value}>
+              <SelectItem className="text-foreground" key={sortOption.value}>
                 {sortOption.label}
               </SelectItem>
             ))}

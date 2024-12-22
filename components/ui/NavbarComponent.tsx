@@ -34,7 +34,7 @@ export default function NavbarComponent() {
     },
     {
       label: 'GSheet',
-      href: process.env.NEXT_PUBLIC_SHEET_URL_HTML,
+      href: 'https://docs.google.com/spreadsheets/u/0/d/1z1n6LfHMskAzD4N6CTNrnhyjFtgN_54TGlAyoU6eOnk/htmlview',
       target: '_blank',
       icon: <PiArrowSquareOut />,
     },
@@ -46,7 +46,7 @@ export default function NavbarComponent() {
       <NavbarBrand>
         <NavbarMenuToggle
           aria-label={isMenuOpen ? 'Close menu' : 'Open menu'}
-          className="sm:hidden mr-3"
+          className="sm:hidden mr-3 text-foreground"
         />
         <Link href="/pvm-rpg">
           <Image
@@ -62,7 +62,7 @@ export default function NavbarComponent() {
         {navbarLinks.map((link, index) => (
           <NavbarItem className="mx-2" key={index}>
             <Link
-              className="font-semibold text-white hover:text-primary"
+              className="font-semibold text-foreground hover:text-primary"
               href={link.href}
               target={link.target}
             >
@@ -81,7 +81,7 @@ export default function NavbarComponent() {
           {navbarLinks.map((link, index) => (
             <NavbarMenuItem className="mx-2" key={index}>
               <Link
-                className="font-semibold my-4 text-white hover:text-primary"
+                className="font-semibold my-4 text-foreground hover:text-primary"
                 href={link.href}
                 target={link.target}
               >

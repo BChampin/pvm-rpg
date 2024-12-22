@@ -30,7 +30,7 @@ export function ThemeSwitcher() {
         startContent={<PiMoon />}
         endContent={<PiSun />}
       />
-      <span className="flex sm:hidden font-bold ml-1">
+      <span className="flex sm:hidden font-bold ml-1 text-foreground">
         {i18n(`nav.mode.${theme}`)}
       </span>
     </div>

@@ -23,7 +23,7 @@ export function LanguageSwitcher() {
         startContent={<span>🇫🇷</span>}
         endContent={<span>🇬🇧</span>}
       />
-      <span className="flex sm:hidden font-bold ml-1">
+      <span className="flex sm:hidden font-bold ml-1 text-foreground">
         {i18n(`nav.language.${language}`)}
       </span>
     </div>

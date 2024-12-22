@@ -20,21 +20,30 @@ import {
 import { ChevronDownIcon, SearchIcon } from '@/components/svg/Svg';
 import { useCallback, useEffect, useMemo, useRef, useState } from 'react';
 import FameChip from '@/components/chips/FameChip';
+import { PiArrowsOutSimple } from 'react-icons/pi';
 import { Player } from '@/types/Sheet';
 import { useLocalization } from '@/store/Localization';
 import { useSearchParams } from 'next/navigation';
 import { useSheetStore } from '@/store/Sheet';
 
-const columns = [
-  { name: 'NAME', uid: 'name', sortable: true },
-  { name: 'CATEGORY', uid: 'category', sortable: true },
-  { name: 'FAME', uid: 'fame' },
-  { name: 'MAPS DONE', uid: 'mapsDone', sortable: true },
-];
-
 export default function PlayersTable() {
   const { players, setModalPlayer } = useSheetStore();
   const { i18n } = useLocalization();
+
+  const columns = [
+    { name: i18n('players.name').toUpperCase(), uid: 'name', sortable: true },
+    {
+      name: i18n('nav.category').toUpperCase(),
+      uid: 'category',
+      sortable: true,
+    },
+    { name: 'FAME', uid: 'fame' },
+    {
+      name: i18n('players.times').toUpperCase(),
+      uid: 'mapsDone',
+      sortable: true,
+    },
+  ];
 
   const categoryOptions = useMemo(() => {
     return [
@@ -61,7 +70,7 @@ export default function PlayersTable() {
     column: 'noSort',
     direction: 'ascending',
   });
-  const [rowsPerPage] = useState(20);
+  const [rowsPerPage] = useState(10);
   const [page, setPage] = useState(1);
 
   const filteredItems = useMemo(() => {
@@ -142,11 +151,40 @@ export default function PlayersTable() {
     return (
       <div className="flex flex-col gap-4">
         <div className="flex flex-col md:flex-row justify-between gap-3 items-end">
-          <div className="flex items-center">
+          <div className="flex items-center gap-2">
             <div className="font-bold text-3xl mr-3">{i18n('nav.players')}</div>
             <span className="text-default-400 text-small">
               Total : {players.length} {i18n('nav.players')}
             </span>
+            <div className="flex sm:hidden">
+              <Dropdown>
+                <DropdownTrigger>
+                  <Button
+                    endContent={<ChevronDownIcon className="text-small" />}
+                    variant="flat"
+                  >
+                    {i18n('nav.category')}
+                  </Button>
+                </DropdownTrigger>
+                <DropdownMenu
+                  disallowEmptySelection
+                  aria-label="Table Columns"
+                  closeOnSelect={false}
+                  selectedKeys={categoryFilter}
+                  selectionMode="multiple"
+                  onSelectionChange={setCategoryFilter}
+                >
+                  {categoryOptions.map((categoryOption) => (
+                    <DropdownItem
+                      key={categoryOption.uid}
+                      className="capitalize text-foreground"
+                    >
+                      {categoryOption.name}
+                    </DropdownItem>
+                  ))}
+                </DropdownMenu>
+              </Dropdown>
+            </div>
           </div>
           <Input
             isClearable
@@ -157,9 +195,9 @@ export default function PlayersTable() {
             onClear={() => onClear()}
             onValueChange={onSearchChange}
           />
-          <div className="flex gap-3">
+          <div className="hidden sm:flex gap-3">
             <Dropdown>
-              <DropdownTrigger className="hidden sm:flex">
+              <DropdownTrigger>
                 <Button
                   endContent={<ChevronDownIcon className="text-small" />}
                   variant="flat"
@@ -176,7 +214,10 @@ export default function PlayersTable() {
                 onSelectionChange={setCategoryFilter}
               >
                 {categoryOptions.map((categoryOption) => (
-                  <DropdownItem key={categoryOption.uid} className="capitalize">
+                  <DropdownItem
+                    key={categoryOption.uid}
+                    className="capitalize text-foreground"
+                  >
                     {categoryOption.name}
                   </DropdownItem>
                 ))}
@@ -237,9 +278,6 @@ export default function PlayersTable() {
         aria-label="Players Table"
         bottomContent={bottomContent}
         bottomContentPlacement="outside"
-        classNames={{
-          wrapper: 'max-h-[500px]',
-        }}
         sortDescriptor={sortDescriptor}
         topContent={topContent}
         topContentPlacement="outside"
@@ -262,8 +300,23 @@ export default function PlayersTable() {
         <TableBody emptyContent={'No players found'} items={sortedItems}>
           {(player) => (
             <TableRow key={player.id}>
-              <TableCell>
-                <div className="font-bold">{player.name}</div>
+              <TableCell className="flex items-center">
+                <Button
+                  isIconOnly
+                  aria-label="Open"
+                  variant="light"
+                  onPress={() => {
+                    const toShowPlayer = players.find(
+                      (allPlayer) => allPlayer.id === player.id
+                    );
+                    if (toShowPlayer) setModalPlayer(toShowPlayer);
+                  }}
+                >
+                  <span className="text-lg">
+                    <PiArrowsOutSimple />
+                  </span>
+                </Button>
+                <div className="font-bold ml-2">{player.name}</div>
               </TableCell>
               <TableCell>
                 <p className="text-bold text-small capitalize">
@@ -271,14 +324,20 @@ export default function PlayersTable() {
                 </p>
               </TableCell>
               <TableCell>
-                {player.fames?.alien && <FameChip fame={player.fames.alien} />}
-                {player.fames?.player && (
-                  <FameChip fame={player.fames.player} />
-                )}
-                {player.fames?.intermediate && (
-                  <FameChip fame={player.fames.intermediate} />
-                )}
-                {player.fames?.noob && <FameChip fame={player.fames.noob} />}
+                {
+                  <FameChip
+                    fame={
+                      [
+                        player.fames?.alien,
+                        player.fames?.player,
+                        player.fames?.intermediate,
+                        player.fames?.noob,
+                      ]
+                        .filter((f) => !!f)
+                        .sort((a, b) => (a.level >= b?.level ? -1 : 1))[0]
+                    }
+                  />
+                }
               </TableCell>
               <TableCell>
                 <span>{player.nbRecords}</span>

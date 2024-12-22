@@ -1,4 +1,5 @@
 import './globals.css';
+import FooterComponent from '@/components/ui/FooterComponent';
 import type { Metadata } from 'next';
 import NavbarComponent from '@/components/ui/NavbarComponent';
 import Providers from '@/app/providers';
@@ -28,11 +29,14 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
+        className={`${geistSans.variable} ${geistMono.variable} antialiased text-foreground bg-background`}
       >
         <Providers>
-          <NavbarComponent />
-          {children}
+          <div className="flex flex-col min-h-screen">
+            <NavbarComponent />
+            <main className="flex-grow p-4">{children}</main>
+            <FooterComponent />
+          </div>
         </Providers>
       </body>
     </html>

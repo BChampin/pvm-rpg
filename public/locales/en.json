@@ -34,5 +34,8 @@
   "home.howto.times.p7": "The maps are available with TMX links so that you can play them locally or online.",
   "home.howto.tips.title": "Protips",
   "home.howto.tips.p1": "Most Maps have a Mod that is recommended to install before you can play. Mods are usually installed automatically if you try to play the map solo or on a server. If you already have a valid time for a map, you can enter it directly without having to redo the map. A server is made available to you in the Club \"PVM RPG\". Once on the server, you can do a ",
-  "home.howto.tips.p2": " to select any map of the PVM."
+  "home.howto.tips.p2": " to select any map of the PVM.",
+  "players.name": "Name",
+  "players.times": "Recorded times",
+  "players.missing": "Missing maps"
 }
