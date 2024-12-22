@@ -9,7 +9,7 @@ export default function MapsCard() {
   if (error) return <p>Error: {error}</p>;
 
   return (
-    <div className="grid grid-cols-2 md:grid-cols-4 gap-4 p-4">
+    <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-4 p-4">
       {maps.map((map, index) => (
         <Link key={index} isExternal href={map.exchange.link}>
           <Card isFooterBlurred className="h-[150px] sm:h-[300px] w-full">

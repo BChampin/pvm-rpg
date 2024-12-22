@@ -37,5 +37,11 @@
   "home.howto.tips.p2": " afin de selectionner n'importe quel map du PVM.",
   "players.name": "Nom",
   "players.times": "Temps enregistrés",
-  "players.missing": "Cartes manquantes"
+  "players.missing": "Cartes manquantes",
+  "maps.sort.grade.asc": "Difficulté - Ordre croissant",
+  "maps.sort.grade.desc": "Difficulté - Ordre décroissant",
+  "maps.sort.alphabetical.asc": "Alphabétique - Ordre croissant",
+  "maps.sort.alphabetical.desc": "Alphabétique - Ordre décroissant",
+  "maps.sort.duration.asc": "Durée - Ordre croissant",
+  "maps.sort.duration.desc": "Durée - Ordre décroissant"
 }

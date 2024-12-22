@@ -37,5 +37,11 @@
   "home.howto.tips.p2": " to select any map of the PVM.",
   "players.name": "Name",
   "players.times": "Recorded times",
-  "players.missing": "Missing maps"
+  "players.missing": "Missing maps",
+  "maps.sort.grade.asc": "Grade - Ascending",
+  "maps.sort.grade.desc": "Grade - Descending",
+  "maps.sort.alphabetical.asc": "Alphabetical - Ascending",
+  "maps.sort.alphabetical.desc": "Alphabetical - Descending",
+  "maps.sort.duration.asc": "Duration - Ascending",
+  "maps.sort.duration.desc": "Duration - Descending"
 }

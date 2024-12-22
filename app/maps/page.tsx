@@ -15,34 +15,34 @@ export default function Maps() {
 
   const sortOptions = [
     {
-      label: 'Grade - Ascending',
+      label: i18n('maps.sort.grade.asc'),
       value: 'grade.ascending',
     },
     {
-      label: 'Grade - Descending',
+      label: i18n('maps.sort.grade.desc'),
       value: 'grade.descending',
     },
     {
-      label: 'Alphabetical - Ascending',
+      label: i18n('maps.sort.alphabetical.asc'),
       value: 'alphabetical.ascending',
     },
     {
-      label: 'Alphabetical - Descending',
+      label: i18n('maps.sort.alphabetical.desc'),
       value: 'alphabetical.descending',
     },
     {
-      label: 'Duration - Ascending',
+      label: i18n('maps.sort.duration.asc'),
       value: 'duration.ascending',
     },
     {
-      label: 'Duration - Descending',
+      label: i18n('maps.sort.duration.desc'),
       value: 'duration.descending',
     },
   ];
 
   return (
     <div>
-      <div className="flex items-center justify-between my-2 px-4">
+      <div className="flex flex-col sm:flex-row items-center justify-between my-2 px-4">
         <div className="font-bold text-3xl text-foreground">
           {i18n('nav.maps')}
         </div>
@@ -56,7 +56,7 @@ export default function Maps() {
             endContent={<PiGridFour />}
           />
           <Select
-            className="max-w-xs min-w-[200px] text-foreground"
+            className="max-w-xs min-w-[250px] text-foreground"
             label={i18n('nav.orderBy')}
             items={sortOptions}
             selectedKeys={[sortMethod]}

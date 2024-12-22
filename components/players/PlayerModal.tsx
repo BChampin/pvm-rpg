@@ -112,7 +112,7 @@ export default function PlayerModal({ player }: { player: Player }) {
           <div className="grid grid-cols-2 sm:grid-cols-4 gap-2 justify-around p-2">
             {Object.entries(player.fames).map(([lvl, fame]) => (
               <Card key={lvl} className="p-6 flex flex-col items-center">
-                <div className="flex flex-col sm:flex-row items-center gap-3">
+                <div className="flex flex-col items-center gap-3">
                   <div>{upperFirst(lvl)}</div>
                   <FameChip fame={fame} />
                 </div>
