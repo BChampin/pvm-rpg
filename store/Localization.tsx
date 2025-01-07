@@ -15,7 +15,7 @@ export const LocalizationProvider: React.FC<{ children: React.ReactNode }> = ({ 
   const [translations, setTranslations] = useState<Record<string, string>>({})
 
   const loadTranslations = async (lang: AvailableLanguage) => {
-    const response = await fetch(`/pvm-rpg/locales/${lang}.json`)
+    const response = await fetch(`/locales/${lang}.json`)
     return await response.json()
   }
 

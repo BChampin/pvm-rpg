@@ -25,11 +25,11 @@ import { useState } from 'react';
 export default function NavbarComponent() {
   const { i18n } = useLocalization();
   const navbarLinks = [
-    { label: i18n('nav.home'), href: '/pvm-rpg', icon: <PiHouse /> },
-    { label: i18n('nav.maps'), href: '/pvm-rpg/maps', icon: <PiFlag /> },
+    { label: i18n('nav.home'), href: '/', icon: <PiHouse /> },
+    { label: i18n('nav.maps'), href: '/maps', icon: <PiFlag /> },
     {
       label: i18n('nav.players'),
-      href: '/pvm-rpg/players',
+      href: '/players',
       icon: <PiUsersThree />,
     },
     {
@@ -48,9 +48,9 @@ export default function NavbarComponent() {
           aria-label={isMenuOpen ? 'Close menu' : 'Open menu'}
           className="sm:hidden mr-3 text-foreground"
         />
-        <Link href="/pvm-rpg">
+        <Link href="/">
           <Image
-            src="/pvm-rpg/assets/favicon.png"
+            src="/assets/favicon.png"
             alt="Logo"
             width={50}
             height={50}

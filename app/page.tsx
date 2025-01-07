@@ -27,7 +27,7 @@ export default function Home() {
             </h1>
             <div className="flex sm:hidden justify-center">
               <Image
-                src="/pvm-rpg/assets/trackmania.png"
+                src="/assets/trackmania.png"
                 alt="Trackmania"
                 width={180}
                 height={180}
@@ -36,7 +36,7 @@ export default function Home() {
           </div>
           <div className="hidden sm:flex">
             <Image
-              src="/pvm-rpg/assets/trackmania.png"
+              src="/assets/trackmania.png"
               alt="Trackmania"
               width={180}
               height={180}

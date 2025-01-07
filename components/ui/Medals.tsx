@@ -23,7 +23,7 @@ export function Medal({
           base: `bg-transparent ${isGroup ? '-mr-6' : ''}`,
         }}
         size="lg"
-        src={`/pvm-rpg/assets/${level.icon}.png`}
+        src={`/assets/${level.icon}.png`}
       />
     </Tooltip>
   );

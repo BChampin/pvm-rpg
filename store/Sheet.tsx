@@ -52,7 +52,7 @@ export const SheetStoreProvider: React.FC<{ children: React.ReactNode }> = ({
 
   const fetchStaticData = async (file: string) => {
     try {
-      const responseFile = await fetch(`/pvm-rpg/data/${file}.json`);
+      const responseFile = await fetch(`/data/${file}.json`);
       return await responseFile.json();
     } catch (err: any) {
       setError(err.message);

@@ -4,7 +4,7 @@
 - [React](https://react.dev/)
 - [Next.js](https://nextjs.org)
 - [NextUI](https://nextui.org/)
-- [Phospohr Icons](https://phosphoricons.com/)
+- [Phosphor Icons](https://phosphoricons.com/)
 
 
 ## Getting Started
@@ -21,4 +21,4 @@ pnpm dev
 bun dev
 ```
 
-Open [http://localhost:3000/pvm-rpg](http://localhost:3000/pvm-rpg) with your browser to see the result.
+Open [http://localhost:3000/](http://localhost:3000/) with your browser to see the result.
