@@ -49,12 +49,7 @@ export default function NavbarComponent() {
           className="sm:hidden mr-3 text-foreground"
         />
         <Link href="/">
-          <Image
-            src="/assets/favicon.png"
-            alt="Logo"
-            width={50}
-            height={50}
-          />
+          <Image src="/assets/favicon.png" alt="Logo" width={50} height={50} />
           <p className="font-bold ml-2">PvM-RPG</p>
         </Link>
       </NavbarBrand>
