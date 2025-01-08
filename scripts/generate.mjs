@@ -177,12 +177,17 @@ async function generateMaps() {
             const id = Number(match[1]);
             exchange.id = id;
             const authorRequest = await fetch(
-              `https://trackmania.exchange/api/maps/get_authors/${id}`
+              `https://trackmania.exchange/legacymapauthors/${id}`
             );
             const authorJson = await authorRequest.json();
-            const author = authorJson[0]?.Username ?? undefined;
+            const author = authorJson[0]
+              ? {
+                  id: authorJson[0].UserID,
+                  username: authorJson[0].Username,
+                }
+              : undefined;
             exchange.author = author;
-            exchange.thumbnail = `https://trackmania.exchange/maps/screenshot_normal/${id}`;
+            exchange.thumbnail = `https://trackmania.exchange/mapimage/${id}`;
           }
         }
 

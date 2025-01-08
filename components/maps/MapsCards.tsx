@@ -27,7 +27,7 @@ export default function MapsCard() {
               <div className="flex flex-grow gap-2 items-center">
                 <div>
                   <p className="text-tiny text-white/70 uppercase font-bold">
-                    {map.exchange.author}
+                    {map.exchange.author.name}
                   </p>
                   <h4 className="text-white font-medium text-xl">
                     {map.label}

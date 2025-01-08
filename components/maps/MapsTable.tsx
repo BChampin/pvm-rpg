@@ -24,7 +24,7 @@ export default function MapsTable() {
     { key: 'times.player', label: 'Player' },
     { key: 'times.intermediate', label: 'Intermediate' },
     { key: 'times.noob', label: 'Noob' },
-    { key: 'exchange.author', label: 'Author' },
+    { key: 'exchange.author.name', label: 'Author' },
     { key: 'exchange.link', label: 'Link' },
   ];
 
@@ -57,7 +57,7 @@ export default function MapsTable() {
               <div>{timeNumberToStr(map.times.noob)}</div>
             </TableCell>
             <TableCell>
-              <div>{map.exchange.author}</div>
+              <div>{map.exchange.author.name}</div>
             </TableCell>
             <TableCell>
               <div className="flex">

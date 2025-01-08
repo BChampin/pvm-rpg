@@ -1,13 +1,19 @@
 export interface SheetStoreContextType {
-  loading: boolean;
   error: string | null;
 
   sortMethod: string;
   setSortMethod: Function;
 
+  // Loading
+  loading: boolean;
+  loadingMaps: boolean;
+  loadingPlayers: boolean;
+  loadingTimeRecords: boolean;
+
   // Data
   sheetUrl: string;
   staticMaps: Map[];
+  authors: Author[];
   maps: Map[];
   players: Player[];
   timeRecords: TimeRecord[];
@@ -74,6 +80,19 @@ export function getMapGrade(label: keyof typeof MapGradeOptions): MapGrade {
   return { label, ...mapGradeData };
 }
 
+export type Author = {
+  id: number;
+  name: string;
+};
+
+export type Exchange = {
+  link?: string;
+  id?: number;
+  author?: Author;
+  thumbnail?: string;
+  awardCount?: number;
+};
+
 export type Map = {
   label: string;
   grade: MapGrade;
@@ -83,12 +102,7 @@ export type Map = {
     intermediate: number;
     noob: number;
   };
-  exchange: {
-    link?: string;
-    id?: number;
-    author?: string;
-    thumbnail?: string;
-  };
+  exchange: Exchange;
 };
 
 export type Player = {
@@ -230,3 +244,16 @@ export function getLevel(lvl: string): Level {
   const levelData = LevelOptions[level as keyof typeof LevelOptions];
   return { level, ...levelData };
 }
+
+type SheetCell = null | { v: string | null };
+
+type SheetRow = SheetCell[];
+
+export type SheetData = {
+  table: {
+    cols: { id: string; label: string; type: string }[];
+    rows: {
+      c: SheetRow;
+    }[];
+  };
+};
