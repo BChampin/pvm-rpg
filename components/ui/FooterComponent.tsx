@@ -1,6 +1,6 @@
 'use client';
 
-import { Link } from '@nextui-org/react';
+import { Link } from '@heroui/react';
 import { PiGithubLogoBold } from 'react-icons/pi';
 
 export default function FooterComponent() {
@@ -19,17 +19,6 @@ export default function FooterComponent() {
           <PiGithubLogoBold />
         </Link>
       </div>
-      <span className="font-bold hidden sm:flex">·</span>
-      <p>
-        Last data update :
-        <span className="m-1">
-          {process.env.NEXT_PUBLIC_DATA_UPDATE_TIMESTAMP
-            ? new Date(
-                process.env.NEXT_PUBLIC_DATA_UPDATE_TIMESTAMP
-              ).toLocaleString()
-            : 'Error'}
-        </span>
-      </p>
     </footer>
   );
 }

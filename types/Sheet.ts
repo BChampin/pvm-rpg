@@ -5,13 +5,15 @@ export interface SheetStoreContextType {
   setSortMethod: Function;
 
   // Loading
-  loading: boolean;
-  loadingMaps: boolean;
-  loadingPlayers: boolean;
-  loadingTimeRecords: boolean;
+  loading: {
+    maps: boolean;
+    players: boolean;
+    timeRecords: boolean;
+  };
 
   // Data
   sheetUrl: string;
+  sheetData: SheetData[];
   staticMaps: Map[];
   authors: Author[];
   maps: Map[];
@@ -21,13 +23,13 @@ export interface SheetStoreContextType {
 
   // Functions
   fetchSheetData: (sheetName: string) => Promise<void>;
-  fetchMaps: () => Promise<void>;
+  // fetchMaps: () => Promise<void>;
   fetchPlayers: () => Promise<void>;
   fetchTimeRecords: () => Promise<void>;
   setModalPlayer: Function;
 }
 
-const MapGradeOptions = {
+export const MapGradeOptions = {
   E: { background: 'lime-300', hex: '#d9ead3', text: 'background', level: 0 },
   D: { background: 'lime-600', hex: '#93c47d', text: 'background', level: 1 },
   C: { background: 'cyan-400', hex: '#c9daf8', text: 'background', level: 2 },
@@ -41,29 +43,35 @@ const MapGradeOptions = {
     text: 'background',
     level: 7,
   },
+  Abyssal: {
+    background: 'purple-300',
+    hex: '#cc0000',
+    text: 'background',
+    level: 8,
+  },
   Omniscient: {
     background: 'violet-900',
     hex: '#b4a7d6',
     text: 'white',
-    level: 8,
+    level: 9,
   },
   Divin: {
     background: 'purple-500',
     hex: '#8e7cc3',
     text: 'background',
-    level: 9,
+    level: 10,
   },
   God: {
     background: 'stone-900',
     hex: '#000000',
     text: 'foreground',
-    level: 10,
+    level: 11,
   },
   'No life': {
     background: 'violet-900',
     hex: '#20124d',
     text: 'white',
-    level: 11,
+    level: 12,
   },
 } as const;
 
@@ -103,6 +111,7 @@ export type Map = {
     noob: number;
   };
   exchange: Exchange;
+  tag?: string;
 };
 
 export type Player = {
@@ -219,7 +228,7 @@ export type TimeRecord = {
   category?: TimeCategory;
 };
 
-type TimeCategory =
+export type TimeCategory =
   | 'Alien'
   | 'Player'
   | 'Intermediate'

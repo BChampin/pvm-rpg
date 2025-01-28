@@ -10,7 +10,7 @@ export default function Players() {
 
   return (
     <div>
-      <div className="p-4 text-foreground">
+      <div className="p-4 text-primary">
         <Suspense fallback={<div>Loading...</div>}>
           <PlayersTable />
           {modalPlayer && <PlayerModal player={modalPlayer} />}

@@ -1,15 +1,15 @@
-import { Card, CardFooter, CardHeader, Image, Link } from '@nextui-org/react';
+import { Card, CardFooter, CardHeader, Image, Link } from '@heroui/react';
 import GradeChip from '@/components/chips/GradeChip';
 import { MedalGroup } from '@/components/ui/Medals';
 import { useSheetStore } from '@/store/Sheet';
 
 export default function MapsCard() {
-  const { maps, loading, error } = useSheetStore();
-  if (loading) return <p>Loading...</p>;
+  const { maps, loadingMaps, error } = useSheetStore();
+  if (loadingMaps) return <p>Loading...</p>;
   if (error) return <p>Error: {error}</p>;
 
   return (
-    <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-4 p-4">
+    <div className="grid grid-cols-2 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 p-4">
       {maps.map((map, index) => (
         <Link key={index} isExternal href={map.exchange.link}>
           <Card isFooterBlurred className="h-[150px] sm:h-[300px] w-full">
@@ -27,7 +27,7 @@ export default function MapsCard() {
               <div className="flex flex-grow gap-2 items-center">
                 <div>
                   <p className="text-tiny text-white/70 uppercase font-bold">
-                    {map.exchange.author.name}
+                    {map.exchange?.author?.name}
                   </p>
                   <h4 className="text-white font-medium text-xl">
                     {map.label}

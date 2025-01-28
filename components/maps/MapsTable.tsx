@@ -6,7 +6,7 @@ import {
   TableColumn,
   TableHeader,
   TableRow,
-} from '@nextui-org/react';
+} from '@heroui/react';
 import GradeChip from '@/components/chips/GradeChip';
 import { Map } from '@/types/Sheet';
 import { timeNumberToStr } from '@/utils';
@@ -57,7 +57,7 @@ export default function MapsTable() {
               <div>{timeNumberToStr(map.times.noob)}</div>
             </TableCell>
             <TableCell>
-              <div>{map.exchange.author.name}</div>
+              <div>{map.exchange?.author?.name}</div>
             </TableCell>
             <TableCell>
               <div className="flex">

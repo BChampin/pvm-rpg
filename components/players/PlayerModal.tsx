@@ -11,7 +11,7 @@ import {
   ModalContent,
   ScrollShadow,
   useDisclosure,
-} from '@nextui-org/react';
+} from '@heroui/react';
 import { Map, MapGrade, Player, TimeRecord, getLevel } from '@/types/Sheet';
 import { Medal, MedalGroup } from '@/components/ui/Medals';
 import { timeNumberToStr, upperFirst } from '@/utils';

@@ -1,109 +1,104 @@
 'use client';
 
-import {
-  Card,
-  CardBody,
-  CardHeader,
-  Divider,
-  Image,
-  Kbd,
-} from '@nextui-org/react';
+import { Card, Divider, Kbd } from '@heroui/react';
 import { PiPresentation, PiQuestionMark, PiTarget } from 'react-icons/pi';
+import { LoadingComponent } from '@/components/ui/Misc';
 import { useLocalization } from '@/store/Localization';
 import { useSheetStore } from '@/store/Sheet';
 
 export default function Home() {
   const { i18n } = useLocalization();
-  const { staticMaps, players, timeRecords } = useSheetStore();
+  const { staticMaps, players, timeRecords, loading } = useSheetStore();
 
   return (
-    <div className="grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20 font-[family-name:var(--font-geist-sans)]">
-      <main className="flex flex-col gap-8 row-start-2">
-        <div className="flex justify-between">
-          <div className="text-center sm:text-start">
-            <p className="text-2xl text-foreground">{i18n('home.welcome')}</p>
-            <h1 className="text-7xl sm:text-8xl text-nowrap text-primary">
-              PvM-RPG
-            </h1>
-            <div className="flex sm:hidden justify-center">
-              <Image
-                src="/assets/trackmania.png"
-                alt="Trackmania"
-                width={180}
-                height={180}
-              />
-            </div>
-          </div>
-          <div className="hidden sm:flex">
-            <Image
-              src="/assets/trackmania.png"
-              alt="Trackmania"
-              width={180}
-              height={180}
-            />
+    <div>
+      <div className="relative flex justify-center py-40 font-medium">
+        <div
+          className="absolute inset-0 bg-black opacity-40"
+          style={{
+            backgroundImage: `url(/assets/home_bg_1.jpg)`,
+            backgroundSize: 'cover',
+            backgroundPosition: 'center',
+            zIndex: 0,
+          }}
+        />
+        <div className="relative z-10 container text-center">
+          <p className="text-3xl text-foreground">{i18n('home.welcome')}</p>
+          <h1 className="text-7xl sm:text-8xl text-nowrap text-primary">
+            PVM-RPG
+          </h1>
+        </div>
+      </div>
+
+      <div className="bg-primary text-secondary flex justify-center py-12 px-8 sm:px-4">
+        <div className="container">
+          <div className="flex flex-col sm:flex-row gap-8 justify-center sm:justify-around">
+            <Card className="p-6 flex flex-col items-center">
+              <div className="text-6xl font-semibold">
+                {loading.maps ? <LoadingComponent /> : staticMaps.length}
+              </div>
+              <div>{i18n('nav.maps')}</div>
+            </Card>
+            <Card className="p-6 flex flex-col items-center">
+              <div className="text-6xl font-semibold">
+                {loading.players ? <LoadingComponent /> : players.length}
+              </div>
+              <div>{i18n('nav.players')}</div>
+            </Card>
+            <Card className="p-6 flex flex-col items-center">
+              <div className="text-6xl font-semibold">
+                {loading.timeRecords ? (
+                  <LoadingComponent />
+                ) : (
+                  timeRecords.length
+                )}
+              </div>
+              <div>{i18n('nav.records')}</div>
+            </Card>
           </div>
         </div>
+      </div>
 
-        <div className="flex flex-col sm:flex-row gap-8 justify-center sm:justify-around">
-          <Card className="p-6 flex flex-col items-center">
-            <div className="text-6xl font-semibold">{staticMaps.length}</div>
-            <div>{i18n('nav.maps')}</div>
-          </Card>
-          <Card className="p-6 flex flex-col items-center">
-            <div className="text-6xl font-semibold">{players.length}</div>
-            <div>{i18n('nav.players')}</div>
-          </Card>
-          <Card className="p-6 flex flex-col items-center">
-            <div className="text-6xl font-semibold">{timeRecords.length}</div>
-            <div>{i18n('nav.records')}</div>
-          </Card>
-        </div>
-
-        <Card>
-          <CardHeader className="flex gap-3">
+      <div className="bg-secondary text-primary flex justify-center py-12 px-8 sm:px-4">
+        <div className="container">
+          <div className="flex gap-3 items-center text-center">
             <PiPresentation size={40} />
-            <div className="flex flex-col">
-              <p className="text-lg text-primary text-bold">
-                {i18n('home.intro.title')}
-              </p>
-            </div>
-          </CardHeader>
-          <Divider />
-          <CardBody>
+            <p className="text-xl font-semibold">{i18n('home.intro.title')}</p>
+          </div>
+          <Divider className="my-2 bg-primary" />
+          <div>
             <p>{i18n('home.intro.p1')}</p>
             <br />
             <p>{i18n('home.intro.p2')}</p>
-          </CardBody>
-        </Card>
+          </div>
+        </div>
+      </div>
 
-        <Card>
-          <CardHeader className="flex gap-3">
+      <div className="bg-primary text-secondary flex justify-center py-12 px-8 sm:px-4">
+        <div className="container">
+          <div className="flex gap-3 items-center text-center">
             <PiTarget size={40} />
-            <div className="flex flex-col">
-              <p className="text-lg text-primary text-bold">
-                {i18n('home.objective.title')}
-              </p>
-            </div>
-          </CardHeader>
-          <Divider />
-          <CardBody>
+            <p className="text-xl font-semibold">
+              {i18n('home.objective.title')}
+            </p>
+          </div>
+          <Divider className="my-2 bg-secondary" />
+          <div>
             <p>{i18n('home.objective.p1')}</p>
             <br />
             <p>{i18n('home.objective.p2')}</p>
-          </CardBody>
-        </Card>
+          </div>
+        </div>
+      </div>
 
-        <Card>
-          <CardHeader className="flex gap-3">
+      <div className="text-primary flex justify-center py-12 px-8 sm:px-4">
+        <div className="container">
+          <div className="flex gap-3 items-center text-center">
             <PiQuestionMark size={40} />
-            <div className="flex flex-col">
-              <p className="text-lg text-primary text-bold">
-                {i18n('home.howto.title')}
-              </p>
-            </div>
-          </CardHeader>
-          <Divider />
-          <CardBody>
+            <p className="text-xl font-semibold">{i18n('home.howto.title')}</p>
+          </div>
+          <Divider className="my-2 bg-primary" />
+          <div>
             <p className="text-lg text-default-500 mb-4">
               {i18n('home.howto.categories.title')}
             </p>
@@ -112,9 +107,9 @@ export default function Home() {
               <li className="mb-2">{i18n('home.howto.categories.p2')}</li>
               <li className="mb-2">{i18n('home.howto.categories.p3')}</li>
             </ul>
-          </CardBody>
-          <Divider />
-          <CardBody>
+          </div>
+          <Divider className="my-2 bg-primary" />
+          <div>
             <p className="text-lg text-default-500 mb-4">
               {i18n('home.howto.times.title')}
             </p>
@@ -130,9 +125,9 @@ export default function Home() {
               <li className="mb-2">{i18n('home.howto.times.p6')}</li>
               <li className="mb-2">{i18n('home.howto.times.p7')}</li>
             </ul>
-          </CardBody>
-          <Divider />
-          <CardBody>
+          </div>
+          <Divider className="my-2 bg-primary" />
+          <div>
             <p className="text-lg text-default-500 mb-4">
               {i18n('home.howto.tips.title')}
             </p>
@@ -141,9 +136,9 @@ export default function Home() {
               <Kbd className="font-semibold">/list</Kbd>{' '}
               {i18n('home.howto.tips.p2')}
             </p>
-          </CardBody>
-        </Card>
-      </main>
+          </div>
+        </div>
+      </div>
     </div>
   );
 }

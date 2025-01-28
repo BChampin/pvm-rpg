@@ -10,7 +10,7 @@ import {
   NavbarMenu,
   NavbarMenuItem,
   NavbarMenuToggle,
-} from '@nextui-org/react';
+} from '@heroui/react';
 import {
   PiArrowSquareOut,
   PiFlag,
@@ -50,14 +50,14 @@ export default function NavbarComponent() {
         />
         <Link href="/">
           <Image src="/assets/favicon.png" alt="Logo" width={50} height={50} />
-          <p className="font-bold ml-2">PvM-RPG</p>
+          <p className="font-bold ml-2">PVM-RPG</p>
         </Link>
       </NavbarBrand>
       <NavbarContent className="hidden sm:flex gap-4" justify="center">
         {navbarLinks.map((link, index) => (
           <NavbarItem className="mx-2" key={index}>
             <Link
-              className="font-semibold text-foreground hover:text-primary"
+              className="font-bold text-foreground uppercase hover:text-primary"
               href={link.href}
               target={link.target}
             >
@@ -76,7 +76,7 @@ export default function NavbarComponent() {
           {navbarLinks.map((link, index) => (
             <NavbarMenuItem className="mx-2" key={index}>
               <Link
-                className="font-semibold my-4 text-foreground hover:text-primary"
+                className="font-bold my-4 uppercase text-foreground hover:text-primary"
                 href={link.href}
                 target={link.target}
               >

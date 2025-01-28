@@ -16,6 +16,12 @@ const geistMono = localFont({
   weight: '100 900',
 });
 
+// const montserrat = localFont({
+//   src: './fonts/Montserrat-Regular.woff',
+//   variable: '--font-montserrat',
+//   weight: '100 900',
+// });
+
 export const metadata: Metadata = {
   title: 'PvM RPG - Trackmania Players Versus Maps',
   description: 'Come discover some incredible RPG maps, grind your times !',
@@ -29,12 +35,12 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased text-foreground bg-background`}
+        className={`${geistSans.variable} ${geistMono.variable} antialiased text-foreground bg-background font-[family-name:var(--font-geist-sans)]`}
       >
         <Providers>
           <div className="flex flex-col min-h-screen">
             <NavbarComponent />
-            <main className="flex-grow p-4">{children}</main>
+            <main className="flex-grow">{children}</main>
             <FooterComponent />
           </div>
         </Providers>

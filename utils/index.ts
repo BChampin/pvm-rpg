@@ -1,3 +1,5 @@
+import { Map } from '@/types/Sheet';
+
 export const timeStrToNumber = (time: string): number => {
   const [minutes, seconds] = time.split(':');
   const [sec, millis] = seconds.split('.');
@@ -15,4 +17,12 @@ export const timeNumberToStr = (time: number): string => {
 
 export const upperFirst = (str: string): string => {
   return String(str).charAt(0).toUpperCase() + String(str).slice(1);
+};
+
+export const getMapFromName = (arr: Map[], name: string): Map => {
+  return arr.find((item: Map) => item.label === name);
+};
+
+export const uniqueStr = (): string => {
+  return `${Date.now().toString(36)}_${Math.random().toString(36).substring(2, 10)}`;
 };

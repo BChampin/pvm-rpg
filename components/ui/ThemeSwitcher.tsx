@@ -2,7 +2,7 @@
 
 import { PiMoon, PiSun } from 'react-icons/pi';
 import { useEffect, useState } from 'react';
-import { Switch } from '@nextui-org/react';
+import { Switch } from '@heroui/react';
 import { useLocalization } from '@/store/Localization';
 import { useTheme } from 'next-themes';
 

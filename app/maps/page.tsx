@@ -1,7 +1,7 @@
 'use client';
 
 import { PiGridFour, PiList } from 'react-icons/pi';
-import { Select, SelectItem, Switch } from '@nextui-org/react';
+import { Select, SelectItem, Switch } from '@heroui/react';
 import MapsCards from '@/components/maps/MapsCards';
 import MapsTable from '@/components/maps/MapsTable';
 import { useLocalization } from '@/store/Localization';
@@ -41,9 +41,9 @@ export default function Maps() {
   ];
 
   return (
-    <div>
-      <div className="flex flex-col sm:flex-row items-center justify-between my-2 px-4">
-        <div className="font-bold text-3xl text-foreground">
+    <div className="bg-secondary p-4">
+      <div className="flex flex-col sm:flex-row items-center justify-between px-4 mb-4">
+        <div className="font-bold text-3xl text-primary">
           {i18n('nav.maps')}
         </div>
         <div className="flex nowrap">

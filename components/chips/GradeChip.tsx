@@ -1,4 +1,4 @@
-import { Chip } from '@nextui-org/react';
+import { Chip } from '@heroui/react';
 import { MapGrade } from '@/types/Sheet';
 
 export default function GradeChip({ grade }: { grade: MapGrade }) {

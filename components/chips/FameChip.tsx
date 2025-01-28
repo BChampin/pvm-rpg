@@ -1,4 +1,4 @@
-import { Chip } from '@nextui-org/react';
+import { Chip } from '@heroui/react';
 import { Fame } from '@/types/Sheet';
 
 export default function FameChip({ fame }: { fame: Fame }) {

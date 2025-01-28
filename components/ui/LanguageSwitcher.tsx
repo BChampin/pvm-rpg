@@ -1,11 +1,11 @@
 'use client';
 
 import { AvailableLanguage } from '@/types/Localization';
-import { Switch } from '@nextui-org/react';
+import { Switch } from '@heroui/react';
 import { useLocalization } from '@/store/Localization';
 
 export function LanguageSwitcher() {
-  const { i18n, language, switchLanguage } = useLocalization();
+  const { language, switchLanguage } = useLocalization();
   const languageReverse = {
     fr: 'en',
     en: 'fr',
@@ -23,9 +23,6 @@ export function LanguageSwitcher() {
         startContent={<span>🇫🇷</span>}
         endContent={<span>🇬🇧</span>}
       />
-      <span className="flex sm:hidden font-bold ml-1 text-foreground">
-        {i18n(`nav.language.${language}`)}
-      </span>
     </div>
   );
 }

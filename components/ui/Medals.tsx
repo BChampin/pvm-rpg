@@ -1,6 +1,6 @@
 'use client';
 
-import { Avatar, AvatarGroup, Tooltip } from '@nextui-org/react';
+import { Avatar, AvatarGroup, Tooltip } from '@heroui/react';
 import { Level, Map, getLevel } from '@/types/Sheet';
 import { timeNumberToStr } from '@/utils';
 

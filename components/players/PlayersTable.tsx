@@ -16,7 +16,7 @@ import {
   TableColumn,
   TableHeader,
   TableRow,
-} from '@nextui-org/react';
+} from '@heroui/react';
 import { ChevronDownIcon, SearchIcon } from '@/components/svg/Svg';
 import { useCallback, useEffect, useMemo, useRef, useState } from 'react';
 import FameChip from '@/components/chips/FameChip';

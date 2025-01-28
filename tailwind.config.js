@@ -1,4 +1,4 @@
-import { nextui } from '@nextui-org/react';
+import { heroui } from '@heroui/react';
 
 /** @type {import('tailwindcss').Config} */
 module.exports = {
@@ -6,7 +6,7 @@ module.exports = {
     './app/**/*.{js,ts,jsx,tsx,mdx}',
     './pages/**/*.{js,ts,jsx,tsx,mdx}',
     './components/**/*.{js,ts,jsx,tsx,mdx}',
-    './node_modules/@nextui-org/theme/dist/**/*.{js,ts,jsx,tsx}',
+    "./node_modules/@heroui/theme/dist/**/*.{js,ts,jsx,tsx}",
   ],
   theme: {
     // extend: {
@@ -26,7 +26,22 @@ module.exports = {
     },
   },
   darkMode: 'class',
-  plugins: [nextui()],
+  plugins: [
+    heroui({
+      themes: {
+        light: {
+          colors: {
+            primary: {
+              DEFAULT: '#1e3a8a',
+            },
+            secondary: {
+              DEFAULT: '#dcfce7',
+            },
+          },
+        },
+      },
+    }),
+  ],
   purge: {
     content: [
       './src/**/*.{js,jsx,ts,tsx}',
@@ -35,7 +50,7 @@ module.exports = {
       './app/**/*.{js,ts,jsx,tsx,mdx}',
       './pages/**/*.{js,ts,jsx,tsx,mdx}',
       './components/**/*.{js,ts,jsx,tsx,mdx}',
-      './node_modules/@nextui-org/theme/dist/**/*.{js,ts,jsx,tsx}',
+      "./node_modules/@heroui/theme/dist/**/*.{js,ts,jsx,tsx}",
     ],
     options: {
       // Add dynamically generated class to ensure present in TW build
@@ -51,6 +66,7 @@ module.exports = {
         'bg-red-300',
         'bg-red-200',
         'bg-violet-800',
+        'bg-purple-300',
         'bg-purple-500',
         'bg-stone-900',
         'bg-violet-900',
