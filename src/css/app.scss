@@ -1,0 +1,36 @@
+// app global css in SCSS form
+.my-br {
+  border-radius: 16px !important;
+}
+
+.link {
+  text-decoration: none;
+  color: $dark;
+  &:hover {
+    color: $primary;
+  }
+}
+
+.container {
+  max-width: 100%;
+  @media (min-width: 0px) {
+    &.container-xsmall {
+      max-width: 36rem;
+    }
+    &.container-small {
+      max-width: 48rem;
+    }
+    &.container-large {
+      max-width: 64rem;
+    }
+    &.container-mlarge {
+      max-width: 80rem;
+    }
+    &.container-xlarge {
+      max-width: 90rem;
+    }
+    &.container-xxlarge {
+      max-width: 120rem;
+    }
+  }
+}
