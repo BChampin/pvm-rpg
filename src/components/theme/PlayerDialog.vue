@@ -100,6 +100,8 @@ const showDialog = ref(true)
 
 const totalMedals = computed(
   () =>
+    (props.player.fames.noway?.level ?? 0) +
+    (props.player.fames.wr?.level ?? 0) +
     (props.player.fames.alien?.level ?? 0) +
     (props.player.fames.player?.level ?? 0) +
     (props.player.fames.intermediate?.level ?? 0) +

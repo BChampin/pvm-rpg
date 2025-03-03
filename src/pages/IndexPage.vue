@@ -137,7 +137,7 @@ const { i18n } = useLocalization()
 }
 
 .bg-image:before {
-  background-image: url(./src/assets/images/home_bg_1.jpg);
+  background-image: url(./images/home_bg_1.jpg);
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;

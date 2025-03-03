@@ -13,7 +13,7 @@
         />
 
         <q-toolbar-title class="flex items-center">
-          <router-link :to="{ name: 'home'}" class="flex items-center link cursor-pointer">
+          <router-link :to="{ name: 'home' }" class="flex items-center link cursor-pointer">
             <img src="/images/favicon.png" height="45" width="45" />
             <h1 class="text-h6 text-weight-bolder text-secondary q-ml-md">PVM-RPG</h1>
           </router-link>

@@ -1,11 +1,11 @@
 <template>
-  <div v-if="props.map" class="q-pa-md absolute">
+  <div v-if="props.map" class="relative-position" style="top: -5px">
     <MedalComponent
       v-for="(medal, index) of cptMedals"
       :key="index"
       :level="medal"
       :map="props.map"
-      :style="`position: absolute; right: -${index * 20}px;`"
+      :style="`position: absolute; right: ${(cptMedals.length - 1 - index) * 20}px;`"
     />
   </div>
 </template>
@@ -22,7 +22,7 @@ const props = defineProps<{
 }>()
 
 const cptMedals = computed(() => {
-  let medals = ['noob', 'intermediate', 'challenger', 'player', 'alien', 'wr']
+  let medals = ['noob', 'intermediate', 'challenger', 'player', 'alien', 'wr', 'noway']
 
   if (props.map && props.time) {
     medals = []
@@ -32,6 +32,7 @@ const cptMedals = computed(() => {
     if (props.map.times.player > props.time) medals.push('player')
     if (props.map.times.alien > props.time) medals.push('alien')
     if (props.map.times.wr > props.time) medals.push('wr')
+    if (props.map.times.noway > props.time) medals.push('noway')
   }
   return medals.map((str) => getLevel(str))
 })
