@@ -24,6 +24,7 @@
             <div class="text-h4 text-primary text-weight-bold">
               {{ i18n('nav.maps') }}
             </div>
+            <div>Total : {{ store.maps.length }} {{ i18n('nav.maps') }}</div>
             <q-input v-model="filter" outlined dense debounce="300" placeholder="Search">
               <template #append>
                 <q-icon name="search" />

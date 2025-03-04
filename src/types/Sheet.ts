@@ -74,6 +74,7 @@ export type Map = {
   label: string
   grade: MapGrade
   times: {
+    noway: number
     wr: number
     alien: number
     player: number
@@ -90,6 +91,7 @@ export type Player = {
   name: string
   rawFame: {
     // Used on generate script
+    noway?: string
     wr?: string
     alien?: string
     player?: string
@@ -98,6 +100,7 @@ export type Player = {
     noob?: string
   }
   fames: {
+    noway?: Fame
     wr?: Fame
     alien?: Fame
     player?: Fame
@@ -215,6 +218,7 @@ export type TimeRecord = {
 export type TimeCategory = 'Alien' | 'Player' | 'Intermediate' | 'Noob' | 'Not defined'
 
 const LevelOptions = {
+  noway: { label: 'No Way', icon: 'noway' },
   wr: { label: 'World Record', icon: 'wr' },
   alien: { label: 'Alien', icon: 'alien' },
   player: { label: 'Player', icon: 'player' },

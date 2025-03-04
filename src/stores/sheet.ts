@@ -21,12 +21,12 @@ import { getMapFromName, timeStrToNumber, uniqueStr } from 'src/utils'
 export const useSheetStore = defineStore('sheet', () => {
   // Sheet
   const SHEET_URL =
-    'https://docs.google.com/spreadsheets/d/1z1n6LfHMskAzD4N6CTNrnhyjFtgN_54TGlAyoU6eOnk/gviz/tq?tqx=out:json&sheet='
+    'https://docs.google.com/spreadsheets/d/1z1n6LfHMskAzD4N6CTNrnhyjFtgN_54TGlAyoU6eOnk/gviz/tq?tqx=out:json&headers=0&sheet='
   const SHEET_URL_HTML =
     'https://docs.google.com/spreadsheets/u/0/d/1z1n6LfHMskAzD4N6CTNrnhyjFtgN_54TGlAyoU6eOnk/htmlview'
   const SHEET_NAMES = [
     'PvM (Aliens)',
-    'PvM (Players)',
+    'PvM (Players 1)',
     'PvM (Players 2)',
     'PvM (Players 3)',
     'PvM (Novice)',
@@ -91,6 +91,7 @@ export const useSheetStore = defineStore('sheet', () => {
         !alienJson.table.rows[3] ||
         !alienJson.table.rows[4] ||
         !alienJson.table.rows[5] ||
+        !alienJson.table.rows[6] ||
         !noviceJson.table.rows[3] ||
         !noviceJson.table.rows[4]
       )
@@ -112,7 +113,7 @@ export const useSheetStore = defineStore('sheet', () => {
 
             // Building exchange object
             const exchange: Exchange = {}
-            let link = alienJson.table.rows[6]?.c[cellIndex]?.v ?? undefined
+            let link = alienJson.table.rows[7]?.c[cellIndex]?.v ?? undefined
             if (link) {
               // Special not properly formatted links
               if (link === 'https://trackmania.exchange/tracks/view/205627/rpg-inside') {
@@ -145,6 +146,9 @@ export const useSheetStore = defineStore('sheet', () => {
               label: cell.v,
               grade: mapGrade ?? getMapGrade('E'),
               times: {
+                noway: alienJson.table.rows[6]?.c[cellIndex]?.v
+                  ? timeStrToNumber(alienJson.table.rows[6]?.c[cellIndex].v)
+                  : 9999999,
                 wr: alienJson.table.rows[5]?.c[cellIndex]?.v
                   ? timeStrToNumber(alienJson.table.rows[5]?.c[cellIndex].v)
                   : 9999999,
@@ -232,7 +236,7 @@ export const useSheetStore = defineStore('sheet', () => {
         const sheet = sheetData.value[sheetIndex]
         if (!sheet) continue
         for (const [rowIndex, row] of sheet.table.rows.entries()) {
-          if (rowIndex < 7 || !row.c[1]?.v || row.c[1]?.v === '/') continue // Skip header or empty row
+          if (rowIndex < (sheetIndex ? 7 : 9 /* Alien skips more rows */) || !row.c[1]?.v || row.c[1]?.v === '/') continue // Skip header or empty row
           const playerId = uniqueStr()
           const player: Player = {
             name: row.c[1].v,
@@ -247,8 +251,18 @@ export const useSheetStore = defineStore('sheet', () => {
               const currentMap: Map | undefined = mapsIdFromCol[cellColIndex]
               if (!timeRegex.test(cell.v) || !currentMap) continue
               const time = timeStrToNumber(cell.v)
-              const mapCategory = ['World Record', 'Alien', 'Player', 'Challenger', 'Intermediate', 'Noob', 'Not defined'][
+              const mapCategory = [
+                'No Way',
+                'World Record',
+                'Alien',
+                'Player',
+                'Challenger',
+                'Intermediate',
+                'Noob',
+                'Not defined',
+              ][
                 [
+                  currentMap.times.noway,
                   currentMap.times.wr,
                   currentMap.times.alien,
                   currentMap.times.player,

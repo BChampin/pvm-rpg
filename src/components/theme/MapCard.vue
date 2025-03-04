@@ -7,11 +7,17 @@
         placeholder-src="../../assets/images/home_bg_1.jpg"
       >
         <div
-          class="absolute-top flex items-center justify-between no-wrap"
-          style="padding-top: 4px; padding-bottom: 4px"
+          class="absolute-top"
+          style="padding-top: 4px; padding-bottom: 4px;"
         >
-          <GradeChip :grade="props.map.grade" />
-          <MedalGroup :map="props.map" />
+          <div class="row justify-between align-center">
+            <div class="col">
+              <GradeChip :grade="props.map.grade" />
+            </div>
+            <div class="col">
+              <MedalGroup :map="props.map" />
+            </div>
+          </div>
         </div>
         <div class="absolute-bottom flex items-center justify-between">
           <div class="text-subtitle1 text-weight-bold">
